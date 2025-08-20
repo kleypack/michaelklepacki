@@ -328,36 +328,17 @@ strong, b {
 }
 
 p.dropcap:first-letter {
-	margin-right: 0.8rem;
-	font-family: 'Avona', var(--font-family-heading);
 	float: left;
-	initial-letter: 3;
-	-webkit-initial-letter: 3 3;
-	padding-top: 0.6rem;
-	padding-left: 0.2rem;
+	padding-top: 1.5rem;
+	padding-right: 0.6rem;
+	font-family: 'Avona', var(--font-family-heading);
+	font-size: 7.4rem;
+	line-height: 0.7;
 	font-weight: 900;
 	text-shadow:
 		0 1px 0 var(--color-light-brighten),
 		0 -1px 1px var(--color-light-shadow-weak);
 }
-
-/** Safari */
-/* @supports (font: -apple-system-body) and (-webkit-appearance: none) {
-	p.dropcap::first-letter {
-		initial-letter: inherit;
-		-webkit-initial-letter: inherit;
-		font-size: 8rem;
-		line-height: 0.9;
-		margin-bottom: -0.2em;
-	}
-} */
-
-/** Mozilla Firefox */
-/* @-moz-document url-prefix() {
-	p.dropcap::first-letter {
-		font-size: 8rem;
-	}
-} */
 
 p.lede {
 	font-size: 1.9rem;
@@ -876,21 +857,6 @@ main {
 	padding-top: var(--space-3xl);
 }
 
-main::before {
-	content: '';
-	position: fixed;
-	top: 0;
-	left: 0;
-	width: 100%;
-	height: var(--space-3xl);
-	z-index: 98;
-	background: linear-gradient(hsla(var(--color-surface-bg-values), 50%), hsla(var(--color-surface-bg-values), 0%));
-	backdrop-filter: blur(1em);
-	-webkit-backdrop-filter: blur(1em);
-	mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 1) 5%, rgba(0, 0, 0, 0));
-	-webkit-mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 1) 5%, rgba(0, 0, 0, 0));
-}
-
 .text-container {
 	width: 100%;
 	max-width: 60ch;
@@ -1259,7 +1225,7 @@ footer li {
 		--color-text-secondary: hsl(41, 12%, 50%);
 
 		--color-light-brighten: hsla(40, 5%, 50%, 60%);
-		--color-light-brighten-weak: hsl(40, 8%, 36%, 60%);
+		--color-light-brighten-weak: hsla(40, 8%, 36%, 84%);
 		--color-light-shadow: hsla(40, 15%, 2%, 60%);
 		--color-light-shadow-heavy: hsl(40, 15%, 1%);
 		--color-light-shadow-weak: hsla(40, 100%, 3%, 88%);
@@ -1336,13 +1302,8 @@ footer li {
 				var(--color-light-brighten-weak)
 			);
 		box-shadow: 0px 20px 8px -12px var(--color-light-shadow);
-		mix-blend-mode: luminosity;
 		-webkit-backdrop-filter: blur(6px);
 		backdrop-filter: blur(6px);
-	}
-
-	nav a {
-		mix-blend-mode: screen;
 	}
 
 	.bookcase {
@@ -1466,14 +1427,6 @@ footer li {
 		font-family: var(--font-family-condensed);
 		font-size: 1.4rem;
 		background-color: var(--color-surface-raised);
-	}
-
-	main::before {
-		background: linear-gradient(var(--color-surface-bg), hsla(var(--color-surface-bg-values), 0%));
-		backdrop-filter: blur(1em);
-		-webkit-backdrop-filter: blur(1em);
-		mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 1) 5%, rgba(0, 0, 0, 0));
-		-webkit-mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 1) 5%, rgba(0, 0, 0, 0));
 	}
 
 	footer .flex-h {
