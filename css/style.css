@@ -460,7 +460,7 @@ blockquote {
 	max-width: 72%;
 	margin: 0.4em 0;
 	border: none;
-	border-radius: var(--border-radius);
+	border-radius: var(--border-radius-l);
 	padding: 1rem 1.6rem 1.1rem;
 	background-color: var(--color-chat-bubble-received);
 }
@@ -535,7 +535,10 @@ a:not(.button):focus {
 
 @media (hover:hover) {
 
-	p a:hover, h2 a:hover, ul:not(nav *) li a:hover {
+	p a:hover,
+	h2 a:hover,
+	ul:not(nav *) li a:hover,
+	ol li a:hover {
 		background-color: var(--color-surface-secondary);
 		box-shadow: 0 0 0 3px var(--color-surface-secondary);
 		animation: a-breathe 4.2s ease-in-out 0.2s infinite;
