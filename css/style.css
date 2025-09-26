@@ -1,4 +1,5 @@
-/* FONTS
+/* ==========================================================================
+   Fonts
    ========================================================================== */
 
 @font-face {
@@ -69,7 +70,7 @@
 
 
 
-/* TESTING ZONE
+/* Testing Zone
    ========================================================================== */
 
 @font-face  {
@@ -94,7 +95,8 @@
 }
 
 
-/* RESET
+/* ==========================================================================
+   Reset
    ========================================================================== */
 
 * {
@@ -159,7 +161,8 @@ q:before {
 
 
 
-/* VARIABLES
+/* ==========================================================================
+   Variables
    ========================================================================== */
 
 :root {
@@ -187,7 +190,10 @@ q:before {
 	--color-light-shadow-weak: hsla(21, 11%, 52%, 18%);
 
 	--color-chat-bubble-sent: color(display-p3 0.8784 0.8471 0.7882);
-	--color-chat-bubble-received: color(display-p3 0.9098 0.8392 0.8078);;
+	--color-chat-bubble-received: color(display-p3 0.9098 0.8392 0.8078);
+	--color-chat-bubble-green: color(display-p3 0.8626 0.8704 0.7696);
+	--color-chat-bubble-yellow: color(display-p3 0.9143 0.8772 0.7131);
+	--color-chat-bubble-purple: color(display-p3 0.8763 0.8638 0.893);
 
 	/* Typography */
 	--font-family: 'Tofino', ui-sans-serif, Helvetica Neue, system-ui;
@@ -217,7 +223,8 @@ q:before {
 
 
 
-/* GENERAL
+/* ==========================================================================
+   General
    ========================================================================== */
 
 html {
@@ -301,7 +308,7 @@ body::-webkit-scrollbar-thumb:hover {
 
 
 
-/* TYPOGRAPHY
+/* Typography
    ========================================================================== */
 
 p,
@@ -418,9 +425,13 @@ ol li {
 	list-style-position: inside;
 }
 
-ol.footnotes li {
+ol.footnotes {
 	font-size: 1.4rem;
 	line-height: 1.8;
+}
+
+ol.footnotes li {
+	list-style-position: outside;
 }
 
 a.fn-back-link {
@@ -441,9 +452,12 @@ sup a {
 }
 
 blockquote {
-	margin: 1em 0 1em var(--space);
+	margin: 1em 0;
 	border-left: 1px solid var(--color-light-shadow);
 	padding-left: var(--space-l);
+	color: var(--color-text-secondary);
+	font-family: var(--font-family-heading);
+	font-size: 1.9rem;
 }
 
 .chat-container address {
@@ -462,7 +476,10 @@ blockquote {
 	border: none;
 	border-radius: var(--border-radius-l);
 	padding: 1rem 1.6rem 1.1rem;
+	color: var(--color-text);
 	background-color: var(--color-chat-bubble-received);
+	font-family: var(--font-family);
+	font-size: 1.6rem;
 }
 
 blockquote.chat-received {
@@ -473,6 +490,18 @@ blockquote.chat-sent {
 	margin-left: auto;
 	border-radius: var(--border-radius-l) var(--border-radius-l) var(--border-radius-xxs) var(--border-radius-l);
 	background-color: var(--color-chat-bubble-sent);
+}
+
+.chat-container blockquote.chat-green {
+	background-color: var(--color-chat-bubble-green);
+}
+
+.chat-container blockquote.chat-yellow {
+	background-color: var(--color-chat-bubble-yellow);
+}
+
+.chat-container blockquote.chat-purple {
+	background-color: var(--color-chat-bubble-purple);
 }
 
 hr {
@@ -511,7 +540,7 @@ pre {
 
 
 
-/* LINKS
+/* Links
    ========================================================================== */
 
 a {
@@ -663,7 +692,7 @@ a.button:focus {
 
 
 
-/* IMAGES & EMBEDS
+/* Images & Embeds
    ========================================================================== */
 
 .aspect-16-9 {
@@ -910,7 +939,7 @@ img {
 
 
 
-/* LAYOUT
+/* Layout
    ========================================================================== */
 
 main {
@@ -994,7 +1023,7 @@ main {
 
 
 
-/* ROWS & FLEXBOX
+/* Rows & Flexbox
    ========================================================================== */
 
 .row {
@@ -1034,7 +1063,7 @@ main {
 
 
 
-/* HEADER & NAVIGATION
+/* Header & Navigation
    ========================================================================== */
 
 .skip-to-content-link {
@@ -1191,7 +1220,7 @@ a.active-anchor {
 
 
 
-/* FOOTER
+/* Footer
    ========================================================================== */
 
 footer {
@@ -1223,7 +1252,7 @@ footer li {
 
 
 
-/* SPACING
+/* Spacing
    ========================================================================== */
 
 .mt-s {
@@ -1284,7 +1313,8 @@ footer li {
 
 
 
-/* DARK MODE
+/* ==========================================================================
+   Dark Mode
    ========================================================================== */
 
 @media (prefers-color-scheme: dark) {
@@ -1397,7 +1427,8 @@ footer li {
 
 
 
-/* MOBILE
+/* ==========================================================================
+   Mobile
    ========================================================================== */
 
 @media only screen and (max-width: 760px) {
