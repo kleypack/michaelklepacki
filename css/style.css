@@ -94,6 +94,20 @@
 	font-display: swap;
 }
 
+@font-face {
+	font-family: 'Avona Serif';
+	font-weight: 400;
+	src: url('/fonts/AvonaSerif-Regular.woff2') format('woff2');
+	font-display: swap;
+}
+
+@font-face {
+	font-family: 'Avona Serif';
+	font-weight: 600;
+	src: url('/fonts/AvonaSerif-Semibold.woff2') format('woff2');
+	font-display: swap;
+}
+
 
 /* ==========================================================================
    Reset
@@ -306,6 +320,10 @@ body::-webkit-scrollbar-thumb:hover {
 	cursor: wait;
 }
 
+.hidden {
+	display: none;
+}
+
 
 
 /* Typography
@@ -455,6 +473,9 @@ blockquote {
 	margin: 1em 0;
 	border-left: 1px solid var(--color-light-shadow);
 	padding-left: var(--space-l);
+}
+
+blockquote.pullquote {
 	color: var(--color-text-secondary);
 	font-family: var(--font-family-heading);
 	font-size: 1.9rem;
@@ -478,8 +499,6 @@ blockquote {
 	padding: 1rem 1.6rem 1.1rem;
 	color: var(--color-text);
 	background-color: var(--color-chat-bubble-received);
-	font-family: var(--font-family);
-	font-size: 1.6rem;
 }
 
 blockquote.chat-received {
@@ -903,26 +922,26 @@ img {
 }
 
 /* Necessary to place shadow under shelf */
-.bookcase-container {
+.bookshelf {
 	position: relative;
 	z-index: 1;
 }
 
-.bookcase {
+.shelf {
 	position: absolute;
 	width: 100%;
 	height: fit-content;
-	margin-top: -1.1rem;
+	margin-top: -0.5rem;
 	background-image: url('/img/hobbies/bookshelf.png');
 	background-size: contain;
 }
 
-.bookcase img {
+.shelf img {
 	opacity: 0;
 }
 
 /* Shadow */
-.bookcase::after {
+.shelf::after {
 	content: '';
 	position: absolute;
 	bottom: -1.6rem;
@@ -935,6 +954,16 @@ img {
 	mix-blend-mode: darken;
 	-webkit-filter: blur(16px);
 	filter: blur(16px);
+}
+
+.books-on-shelf {
+	position: relative;
+	display: flex;
+	width: 90%;
+	height: auto;
+	aspect-ratio: 540 / 140;
+	z-index: 2;
+	margin: 0 auto;
 }
 
 
@@ -1046,6 +1075,7 @@ main {
 
 .flex-h {
 	display: flex;
+	align-items: baseline;
 }
 
 .flex-h p + p {
@@ -1312,6 +1342,171 @@ footer li {
 }
 
 
+/* Reading Page
+   ========================================================================== */
+
+.reading-section-header {
+	border-bottom: 1px solid var(--color-text-secondary);
+}
+
+.reading-container {
+	display: flex;
+	gap: var(--space);
+	font-family: 'Avona Serif', var(--font-family-heading);
+}
+
+.reading-container + .reading-container {
+	margin-top: var(--space-l);
+}
+
+.book {
+	position: relative;
+	flex-shrink: 0;
+	width: 25%;
+	aspect-ratio: 2 / 3;
+}
+
+.book-cover {
+	position: absolute;
+	z-index: 1;
+	width: 100%;
+	aspect-ratio: 2 / 3;
+	transform-origin: 0 50%;
+	border-radius: var(--border-radius-xxs);
+	background-size: cover;
+	background-position: center;
+	box-shadow: 0px 3px 6px -1px var(--color-light-shadow-heavy);
+}
+
+.book-cover .binding {
+	content: "";
+	position: absolute;
+	top: 0;
+	left: 0;
+	z-index: 1;
+	width: 100%;
+	aspect-ratio: 2 / 3;
+	border-radius: var(--border-radius-xxs);
+	background:
+		linear-gradient(to right, var(--color-light-shadow), var(--color-light-shadow) 2%, hsla(50, 43%, 99%, 64%) 2%, transparent 4%, var(--color-light-shadow) 6%, var(--color-light-shadow-weak) 8%, hsla(50, 43%, 99%, 64%) 8%, transparent 10%);
+	mix-blend-mode: luminosity;
+	box-shadow: inset 0px -1px 1px var(--color-light-shadow);
+}
+
+.book-cover .light {
+	content: "";
+	position: absolute;
+	top: 0;
+	left: 0;
+	z-index: 1;
+	width: 100%;
+	height: 40%;
+	border-radius: var(--border-radius-xxs);
+	background:
+		radial-gradient(ellipse at top, hsla(0, 0%, 100%, 40%) 0%, hsla(0, 0%, 100%, 15%) 40%, hsla(0, 0%, 100%, 0%) 70%);
+	mix-blend-mode: luminosity;
+	filter: blur(0.5px);
+	-webkit-filter: blur(0.5px);
+}
+
+.currently-reading .book-cover {
+	transform: perspective(1500px) rotateY(-30deg);
+	transform-style: preserve-3d;
+	-webkit-transform-style: preserve-3d;
+	box-shadow:
+		9px 0px 6px -8px var(--color-light-shadow-heavy),
+		0px 8px 16px -8px var(--color-light-shadow-heavy);
+	transition: 0.5s ease-out;
+}
+
+.currently-reading:hover .book-cover {
+	transform: perspective(1000px) rotateY(-40deg);
+	transform-style: preserve-3d;
+	box-shadow:
+		7px 0px 14px -8px var(--color-light-shadow-heavy),
+		0px 8px 16px -8px var(--color-light-shadow-heavy);
+}
+
+.book-pages {
+	width: 100%;
+	height: 98%;
+	position: relative;
+	top: 1%;
+	border: 4px solid hsl(40 4 29);
+	border-radius: var(--border-radius-xxs);
+	background: hsl(39 24 95);
+	box-shadow:
+		0px 3px 6px -2px var(--color-light-shadow-heavy),
+		inset -2px 0 hsl(39 24 70);
+}
+
+.bookmark {
+	position: absolute;
+	bottom: -6px;
+	left: 9%;
+	width: 8px;
+	height: calc(98% + 6px);
+	background: firebrick;
+}
+
+.reading-info {
+	justify-content: space-between;
+	padding: var(--space) 0;
+}
+
+.book-details {
+	letter-spacing: 0.02em;
+}
+
+p.book-title {
+	font-family: 'Avona Serif', var(--font-family-heading);
+	font-size: 1.9rem;
+	font-weight: var(--font-weight-heading);
+	line-height: var(--line-height-heading);
+}
+
+p.book-author {
+	margin: 0;
+	color: var(--color-text-secondary);
+}
+
+.reading-info {
+	display: flex;
+	flex-direction: column;
+	gap: var(--space-s);
+}
+
+.book-review p + p {
+	margin: 0;
+	font-family: var(--font-family);
+}
+
+.book-rating {
+	color: var(--color-text-secondary);
+	font-family: var(--font-family);
+	font-variant-numeric: lining-nums;
+}
+
+.reading-dates {
+	color: var(--color-text-secondary);
+	font-size: 1.4rem;
+	font-family: var(--font-family);
+	font-variant-numeric: lining-nums;
+}
+
+.books-on-shelf .book {
+	position: relative;
+	display: flex;
+	align-self: flex-end;
+	width: 16%;
+	margin-right: 5%;
+	transition: all .2s ease-out;
+}
+
+.books-on-shelf .book:hover {
+	transform: translateY(-8px);
+}
+
 
 /* ==========================================================================
    Dark Mode
@@ -1415,12 +1610,30 @@ footer li {
 		backdrop-filter: blur(6px);
 	}
 
-	.bookcase {
+	.shelf {
 		background-image: url('/img/hobbies/bookshelfGlass@3×.png');
 	}
 
-	.bookcase::after {
+	.shelf::after {
 		height: 100%;
+	}
+
+	.book-cover .binding {
+		background:
+			linear-gradient(
+				to right,
+				hsla(40, 0%, 2%, 60%),
+				hsla(40, 0%, 2%, 40%) 2%,
+				var(--color-light-brighten) 2%,
+				transparent 4%, hsla(40, 0%, 2%, 20%) 5%,
+				hsla(40, 0%, 2%, 30%) 6%,
+				var(--color-light-brighten) 7%,
+				transparent 9%);
+	}
+
+	.book-pages {
+		border: 4px solid hsl(40 4 32);
+		background: hsl(39 24 95);
 	}
 
 }
@@ -1460,7 +1673,7 @@ footer li {
 		width: 100% !important;
 	}
 
-	.bookcase-container {
+	.bookshelf {
 		display: none;
 	}
 
