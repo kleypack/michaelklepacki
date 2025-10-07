@@ -857,8 +857,8 @@ img {
 	width: 100%;
 	height: 100%;
 	background-color: var(--color-surface-raised);
-	backdrop-filter: blur(8rem);
 	-webkit-backdrop-filter: blur(8rem);
+	backdrop-filter: blur(8rem);
 	cursor: zoom-out;
 }
 
@@ -919,51 +919,6 @@ img {
 		);
 	-webkit-filter: blur(1px);
 	filter: blur(1px);
-}
-
-/* Necessary to place shadow under shelf */
-.bookshelf {
-	position: relative;
-	z-index: 1;
-}
-
-.shelf {
-	position: absolute;
-	width: 100%;
-	height: fit-content;
-	margin-top: -0.5rem;
-	background-image: url('/img/hobbies/bookshelf.png');
-	background-size: contain;
-}
-
-.shelf img {
-	opacity: 0;
-}
-
-/* Shadow */
-.shelf::after {
-	content: '';
-	position: absolute;
-	bottom: -1.6rem;
-	left: 3%;
-	z-index: -1;
-	width: 94%;
-	height: 90%;
-	border-radius: 50% 50% 0 0;
-	background: var(--color-light-shadow-heavy);
-	mix-blend-mode: darken;
-	-webkit-filter: blur(16px);
-	filter: blur(16px);
-}
-
-.books-on-shelf {
-	position: relative;
-	display: flex;
-	width: 90%;
-	height: auto;
-	aspect-ratio: 540 / 140;
-	z-index: 2;
-	margin: 0 auto;
 }
 
 
@@ -1033,8 +988,8 @@ main {
 	margin-right: calc((100vw - 60ch) / 2);
 	margin-bottom: calc(var(--space-xl) * -1);
 	margin-left: calc(((100vw - 60ch) / 2) * -1);
-	mask-image: linear-gradient(to right, rgba(0,0,0,0), rgba(0,0,0,1) 10%, rgba(0,0,0,1) 90%, rgba(0,0,0,0));
 	-webkit-mask-image: linear-gradient(to right, rgba(0,0,0,0), rgba(0,0,0,1) 10%, rgba(0,0,0,1) 90%, rgba(0,0,0,0));
+	mask-image: linear-gradient(to right, rgba(0,0,0,0), rgba(0,0,0,1) 10%, rgba(0,0,0,1) 90%, rgba(0,0,0,0));
 	-ms-overflow-style: none;  /* Hide scrollbar for IE and Edge */
 	scrollbar-width: none;  /* Hide scrollbar for Firefox */
 }
@@ -1100,6 +1055,7 @@ main {
 	position: absolute;
 	top: .5em;
 	left: 1em;
+	-webkit-clip-path: inset(0px 0px);
 	clip-path: inset(0px 0px);
 	width: 1px;
 	height: 1px;
@@ -1112,6 +1068,7 @@ main {
 }
 
 .skip-to-content-link:focus {
+	-webkit-clip-path: none;
 	clip-path: none;
 	width: auto;
 	height: auto;
@@ -1355,10 +1312,6 @@ footer li {
 	font-family: 'Avona Serif', var(--font-family-heading);
 }
 
-.reading-container + .reading-container {
-	margin-top: var(--space-l);
-}
-
 .book {
 	position: relative;
 	flex-shrink: 0;
@@ -1371,11 +1324,18 @@ footer li {
 	z-index: 1;
 	width: 100%;
 	aspect-ratio: 2 / 3;
-	transform-origin: 0 50%;
 	border-radius: var(--border-radius-xxs);
 	background-size: cover;
 	background-position: center;
 	box-shadow: 0px 3px 6px -1px var(--color-light-shadow-heavy);
+	transform-origin: 0 50%;
+}
+
+.book-cover img {
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+	border-radius: var(--border-radius-xxs);
 }
 
 .book-cover .binding {
@@ -1388,7 +1348,16 @@ footer li {
 	aspect-ratio: 2 / 3;
 	border-radius: var(--border-radius-xxs);
 	background:
-		linear-gradient(to right, var(--color-light-shadow), var(--color-light-shadow) 2%, hsla(50, 43%, 99%, 64%) 2%, transparent 4%, var(--color-light-shadow) 6%, var(--color-light-shadow-weak) 8%, hsla(50, 43%, 99%, 64%) 8%, transparent 10%);
+		linear-gradient(
+			to right,
+			var(--color-light-shadow),
+			var(--color-light-shadow) 2%,
+			hsla(50, 43%, 99%, 64%) 2%,
+			transparent 4%,
+			var(--color-light-shadow) 6%,
+			var(--color-light-shadow-weak) 8%,
+			hsla(50, 43%, 99%, 64%) 8%,
+			transparent 10%);
 	mix-blend-mode: luminosity;
 	box-shadow: inset 0px -1px 1px var(--color-light-shadow);
 }
@@ -1403,10 +1372,14 @@ footer li {
 	height: 40%;
 	border-radius: var(--border-radius-xxs);
 	background:
-		radial-gradient(ellipse at top, hsla(0, 0%, 100%, 40%) 0%, hsla(0, 0%, 100%, 15%) 40%, hsla(0, 0%, 100%, 0%) 70%);
+		radial-gradient(
+			ellipse at top,
+			hsla(0, 0%, 100%, 40%) 0%,
+			hsla(0, 0%, 100%, 15%) 40%,
+			hsla(0, 0%, 100%, 0%) 70%);
 	mix-blend-mode: luminosity;
-	filter: blur(0.5px);
 	-webkit-filter: blur(0.5px);
+	filter: blur(0.5px);
 }
 
 .currently-reading .book-cover {
@@ -1417,6 +1390,10 @@ footer li {
 		9px 0px 6px -8px var(--color-light-shadow-heavy),
 		0px 8px 16px -8px var(--color-light-shadow-heavy);
 	transition: 0.5s ease-out;
+}
+
+.currently-reading .book-cover .binding {
+	background: linear-gradient(to right, hsla(50, 43%, 99%, 64%), transparent 2%, var(--color-light-shadow) 4%, var(--color-light-shadow-weak) 6%, hsla(50, 43%, 99%, 64%) 6%, transparent 8%);
 }
 
 .currently-reading:hover .book-cover {
@@ -1450,8 +1427,11 @@ footer li {
 }
 
 .reading-info {
+	display: flex;
+	flex-direction: column;
+	gap: var(--space-s);
 	justify-content: space-between;
-	padding: var(--space) 0;
+	padding: var(--space-s) 0;
 }
 
 .book-details {
@@ -1470,12 +1450,6 @@ p.book-author {
 	color: var(--color-text-secondary);
 }
 
-.reading-info {
-	display: flex;
-	flex-direction: column;
-	gap: var(--space-s);
-}
-
 .book-review p + p {
 	margin: 0;
 	font-family: var(--font-family);
@@ -1487,11 +1461,68 @@ p.book-author {
 	font-variant-numeric: lining-nums;
 }
 
+.book-rating.five-star {
+	color: goldenrod;
+}
+
+.book-rating.favourite:after {
+	content: '♥︎';
+	margin-left: 0.4em;
+	color: firebrick;
+	font-size: 1.2em;
+}
+
 .reading-dates {
 	color: var(--color-text-secondary);
 	font-size: 1.4rem;
 	font-family: var(--font-family);
 	font-variant-numeric: lining-nums;
+}
+
+/* Necessary to place shadow under shelf */
+.bookshelf {
+	position: relative;
+	z-index: 1;
+}
+
+.shelf {
+	position: absolute;
+	width: 100%;
+	height: fit-content;
+	margin-top: -0.5rem;
+	background: url('/img/hobbies/bookshelf.png');
+	background-size: contain;
+	background-repeat: no-repeat;
+}
+
+.shelf img {
+	opacity: 0;
+}
+
+/* Shadow */
+.shelf::after {
+	content: '';
+	position: absolute;
+	bottom: -1.6rem;
+	left: 3%;
+	z-index: -1;
+	width: 94%;
+	height: 90%;
+	border-radius: 50% 50% 0 0;
+	background: var(--color-light-shadow-heavy);
+	mix-blend-mode: darken;
+	-webkit-filter: blur(16px);
+	filter: blur(16px);
+}
+
+.books-on-shelf {
+	position: relative;
+	display: flex;
+	width: 90%;
+	height: auto;
+	aspect-ratio: 540 / 140;
+	z-index: 2;
+	margin: 0 auto;
 }
 
 .books-on-shelf .book {
@@ -1669,12 +1700,25 @@ p.book-author {
 		font-weight: var(--font-weight-heading);
 	}
 
-	.literal-widget {
-		width: 100% !important;
+	.reading-info {
+		padding: var(--space-xxs) 0;
 	}
 
 	.bookshelf {
+		width: 100%;
+	}
+
+	.shelf {
+		margin-top: -0.2rem;
+	}
+
+	.books-on-shelf .book:last-child {
 		display: none;
+	}
+
+	.books-on-shelf .book {
+		width: 22%;
+		margin-right: 4%;
 	}
 
 	.gallery-img-container {
@@ -1702,8 +1746,8 @@ p.book-author {
 		overflow-x: scroll;
 		overflow-y: hidden;
 		background-color: var(--color-surface-raised);
-		backdrop-filter: blur(8px);
 		-webkit-backdrop-filter: blur(8px);
+		backdrop-filter: blur(8px);
 		-ms-overflow-style: none;  /* Hide scrollbar for IE and Edge */
 		scrollbar-width: none;  /* Hide scrollbar for Firefox */
 	}
@@ -1782,6 +1826,7 @@ p.book-author {
 		margin-bottom: calc(var(--space-xxl) * -1);
 		padding: var(--space) var(--space) var(--space-xl);
 		overflow-x: scroll;
+		-webkit-mask-image:  none;
 		mask-image: none;
 	}
 
