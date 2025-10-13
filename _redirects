@@ -1,5 +1,5 @@
 # FROM                        TO
-/design                       /portfolio
+/design                       /portfolio/ui-design
 /design/exploration           /portfolio/exploration
 /design/icons                 /portfolio/icons
 /design/work                  /portfolio/ui-design
