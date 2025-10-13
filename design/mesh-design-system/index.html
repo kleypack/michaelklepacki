@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>MESH Design System · Michael Klepacki</title>
+        <meta name="description" content="When it was decided that MESH would be rebuilt and relaunched from the ground up, I created a comprehensive design system to ease development of the platform and improve user experience.">
+        <link rel="image_src" href="/img/design/meshDesignSystem/meshRelaunchOverview-1920@2x.png">
+        <meta property="og:type" content="website">
+        <meta property="og:title" content="MESH 2.0 Relaunch & Design System · Michael Klepacki">
+        <meta property="og:description" content="When it was decided that MESH would be rebuilt and relaunched from the ground up, I created a comprehensive design system to ease development of the platform and improve user experience.">
+        <meta property="og:image" content="/img/design/meshAdminPortal/meshAdminPortalCover-1920@2x.png">
+        <!-- FAVICONS -->
+        <link rel="icon" type="image/png" sizes="16x16" href="/icons/favicon-16.png">
+        <link rel="icon" type="image/png" sizes="32x32" href="/icons/favicon-32.png">
+        <link rel="icon" type="image/png" sizes="48x48" href="/icons/favicon-48.png">
+        <link rel="apple-touch-icon" sizes="180x180" href="/icons/apple-touch-icon.png">
+        <!-- STYLE SHEETS -->
+        <link rel="stylesheet" href="/css/style.css">
+        <!-- SCRIPTS -->
+    </head>
+    <body id="top">
+        <!--
+            HEADER
+        -->
+        <header>
+            <a href="#main-content" class="skip-to-content-link">Skip to content</a>
+            <nav>
+                <ul>
+                    <li>
+                        <a href="/" class="logo">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path fill-rule="evenodd" clip-rule="evenodd" d="M2.5 15.75V5.5C2.5 4.94772 2.94772 4.5 3.5 4.5C3.74815 4.5 3.9752 4.59039 4.15 4.74004L11.0411 10.5618L20.9735 4.64966C21.1264 4.55478 21.3068 4.5 21.5 4.5C22.0523 4.5 22.5 4.94772 22.5 5.5V15.7363L22.5 15.75C22.5 17.3227 21.2899 18.6127 19.75 18.7397V18.75H5.5C3.84315 18.75 2.5 17.4069 2.5 15.75ZM4.5 7.65392L15.2668 16.75H5.5C4.94772 16.75 4.5 16.3023 4.5 15.75V7.65392ZM20.5 7.259L12.6573 11.9273L18.3659 16.75H19.5C20.0523 16.75 20.5 16.3023 20.5 15.75L20.5 7.259Z" fill="#2B2B2B"/>
+                            </svg>
+                            <span class="logo-text">Michael Klepacki</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a class="inactive-page" href="/design/">Design</a>
+                    </li>
+                    <li>
+                        <a class="inactive-page" href="/hobbies/">Hobbies</a>
+                    </li>
+                    <li>
+                        <a class="inactive-page" href="/all/">All</a>
+                    </li>
+                </ul>
+            </nav>
+        </header>
+        <!--
+            PAGE
+        -->
+        <main>
+            <article>
+                <div class="text-container">
+                    <h1>MESH 2.0 Design System </h1>
+                    <p class="lede">I created a comprehensive design system to ease design and development of MESH while addressing feedback to improve the user experience.</p>
+                </div>
+                <div class="article-image-container">
+                    <div class="img-container aspect-16-9">
+                        <div></div>
+                        <a href="/img/design/meshDesignSystem/meshDesignSystemOverview@2x-hq.png" class="zoom">
+                            <img
+                                 srcset="/img/design/meshDesignSystem/meshDesignSystemOverview-640@2x.png 640w,
+                                         /img/design/meshDesignSystem/meshDesignSystemOverview-768@2x.png 768w,
+                                         /img/design/meshDesignSystem/meshDesignSystemOverview-1024@2x.png 1024w,
+                                         /img/design/meshDesignSystem/meshDesignSystemOverview-1366@2x.png 1366w,
+                                         /img/design/meshDesignSystem/meshDesignSystemOverview-1600@2x.png 1600w,
+                                         /img/design/meshDesignSystem/meshDesignSystemOverview-1920@2x.png 1920w"
+                                 sizes="(max-width: 760px) 100vw,
+                                        960px"
+                                 src="/img/design/meshDesignSystem/meshDesignSystemOverview-1920@2x.png"
+                                 alt=""
+                                 width="1920" height="1080"
+                            >
+                        </a>
+                    </div>
+                </div>
+                <div class="text-container">
+                   <p class="dropcap">Near the end of 2023 it was decided that <a href="/design/mesh-early-iteration/" title="Early Iterations at MESH">MESH</a> would be rebuilt from the ground up to remedy years of tech debt and give the platform a new, more solid foundation. When I heard the news I knew it was the perfect opportunity to create and implement a new design system&thinsp;—&thinsp;this could speed up both my work designing the app and the dev team’s work building it.</p>
+                   <p>I could also further refine the visual direction from our <a href="/design/mesh-redesign/" title="MESH Redesign">2022 redesign</a> to address user feedback. Many of them are fairly new to digital interfaces, and while they loved the <em>look</em>, some were struggling to actually <em>use</em> parts of the app. This would be a great time to enhance the user experience by bringing added affordance, structural clarity, and consistency to the visual design.</p>
+                   <h2 id="design-system">Design system <a href="#design-system" class="anchor-link">#</a></h2>
+                   <p>With the previous redesign, I created a small <a href="/design/mesh-redesign#style-guide" title="MESH Redesign | New style guide">style guide</a> and <a href="/design/mesh-redesign#component-library" title="MESH Redesign | Atomic component library">component library</a> which served us well. But this time I was ready to take things further and introduce a complete design system.</p>
+                   <p>I began by specifying a collection of tokens, which would double as CSS variables for the development team. These included everything from colour values to font sizes to numerical values for sizing and spacing.</p>
+                   <p>In practice, this means less hand selecting and hard coding of frequently used values in favour of specifying tokens. It also helps ensure harmonic consistency throughout the app&thinsp;—&thinsp;the sizing and spacing scales help create visual rhythm, as do the typographic styles that are built upon a responsive scale. A robust token collection also gives us flexibility to make changes as needed, as altering a single token instantly updates all components across the platform that utilises it.</p>
+                   <blockquote class="pullquote">
+                       <p>In practice, this means less hand selecting and hard coding of frequently used values and helps ensure harmonic consistency</p>
+                   </blockquote>
+                   <p>I started with MESH’s brand identity: rooting the app in shades of our primary MESH blue, accented by bold raspberry. Colours and their combinations were carefully selected to ensure AA WCAG accessibility. There are tokens for border radii so items nest beautifully, and tokens for background blurs to emphasise depth within the interface. Tokens for font size, weight, features, and line heights can be combined to form more complex font styles.</p>
+                </div>
+                <div class="article-image-container">
+                    <div class="img-container aspect-16-9">
+                        <div></div>
+                        <a href="/img/design/meshDesignSystem/meshDesignSystemTokens@2x-hq.png" class="zoom">
+                            <img srcset="/img/design/meshDesignSystem/meshDesignSystemTokens-640@2x.png 640w,
+                                         /img/design/meshDesignSystem/meshDesignSystemTokens-768@2x.png 768w,
+                                         /img/design/meshDesignSystem/meshDesignSystemTokens-1024@2x.png 1024w,
+                                         /img/design/meshDesignSystem/meshDesignSystemTokens-1366@2x.png 1366w,
+                                         /img/design/meshDesignSystem/meshDesignSystemTokens-1600@2x.png 1600w,
+                                         /img/design/meshDesignSystem/meshDesignSystemTokens-1920@2x.png 1920w"
+                                 sizes="(max-width: 760px) 100vw,
+                                        960px"
+                                 src="/img/design/meshDesignSystem/meshDesignSystemTokens-1920@2x.png"
+                                 alt=""
+                                 width="1920" height="1080"
+                            >
+                        </a>
+                    </div>
+                    <div class="text-container">
+                        <p class="image-caption">Design tokens would lend the app consistency and rhythm while significantly increasing the efficiency of our work.</p>
+                    </div>
+                </div>
+                <div class="text-container">
+                    <p>I again curated a set of icons from Microsoft’s robust Fluent collection. Separate lists of different sizes cover every use case from the smallest instances to large, multicoloured statement moments. The Fluent system also has wonderfully documented creation guidelines, which allows me to create my own icons when needed that fit seamlessly into the larger set.</p>
+                </div>
+                <div class="article-image-container">
+                    <div class="img-container aspect-16-9">
+                        <div></div>
+                        <a href="/img/design/meshDesignSystem/meshDesignSystemIcons@2x-hq.png" class="zoom">
+                            <img srcset="/img/design/meshDesignSystem/meshDesignSystemIcons-640@2x.png 640w,
+                                         /img/design/meshDesignSystem/meshDesignSystemIcons-768@2x.png 768w,
+                                         /img/design/meshDesignSystem/meshDesignSystemIcons-1024@2x.png 1024w,
+                                         /img/design/meshDesignSystem/meshDesignSystemIcons-1366@2x.png 1366w,
+                                         /img/design/meshDesignSystem/meshDesignSystemIcons-1600@2x.png 1600w,
+                                         /img/design/meshDesignSystem/meshDesignSystemIcons-1920@2x.png 1920w"
+                                 sizes="(max-width: 760px) 100vw,
+                                        960px"
+                                 src="/img/design/meshDesignSystem/meshDesignSystemIcons-1920@2x.png"
+                                 alt="A collection of icons used across MESH. Most have been pulled from Microsoft's Fluent set, but some I designed myself to fit in with the rest."
+                                 width="1920" height="1080"
+                            >
+                        </a>
+                    </div>
+                    <div class="text-container">
+                        <p class="image-caption">Microsoft’s Fluent iconography lend a professional but approachable tone to MESH. I maintain a curated collection for us to use and even make my own custom icons, like the ones above in raspberry.</p>
+                    </div>
+                </div>
+                <div class="text-container">
+                    <p>Utilising the tokens and iconography, I created and managed a comprehensive component library. Similar to the tokens, instead of having to build things from scratch (or copy and paste) every time we need a common asset, we can simply call the component and specify its variables<sup id="fnr-1" class="fnr"><a href="#fn-1">1</a></sup>.</p>
+                    <p>This time around, I designed everything with affordance and tactility in mind. Some of MESH’s users struggle to understand flat, minimal design, so I looked to the earlier days of both desktop and mobile computing for inspiration<sup id="fnr-2" class="fnr"><a href="#fn-2">2</a></sup>. Buttons and cards are slightly raised from the background to invite interaction; input fields are inset, ready to be filled; and the whole interface feels lit, featuring edge highlights, subtle gradients, and even some glowing elements.</p>
+                </div>
+                <div class="article-image-container">
+                    <div class="img-container aspect-16-9">
+                        <div></div>
+                        <a href="/img/design/meshDesignSystem/meshDesignSystemOverview@2x-hq.png" class="zoom">
+                            <img srcset="/img/design/meshDesignSystem/meshDesignSystemOverview-640@2x.png 640w,
+                                         /img/design/meshDesignSystem/meshDesignSystemOverview-768@2x.png 768w,
+                                         /img/design/meshDesignSystem/meshDesignSystemOverview-1024@2x.png 1024w,
+                                         /img/design/meshDesignSystem/meshDesignSystemOverview-1366@2x.png 1366w,
+                                         /img/design/meshDesignSystem/meshDesignSystemOverview-1600@2x.png 1600w,
+                                         /img/design/meshDesignSystem/meshDesignSystemOverview-1920@2x.png 1920w"
+                                 sizes="(max-width: 760px) 100vw,
+                                        960px"
+                                 src="/img/design/meshDesignSystem/meshDesignSystemOverview-1920@2x.png"
+                                 alt=""
+                                 width="1920" height="1080"
+                            >
+                        </a>
+                    </div>
+                    <div class="text-container">
+                        <p class="image-caption">A sample of components and some of their variable configurations.</p>
+                    </div>
+                </div>
+                <div class="text-container">
+                    <p>Components have set maximum widths and responsive sizes with locked aspect ratios. I also specified responsive breakpoints and created adaptive layouts for larger screens. All of this allows the MESH app to fluidly scale to effectively utilise screen space while keeping things consistent.</p>
+                </div>
+                <div class="article-image-container">
+                    <div class="img-container aspect-16-9">
+                        <div></div>
+                        <a href="/img/design/meshDesignSystem/meshDesignSystemResponsive@2x-hq.png" class="zoom">
+                            <img srcset="/img/design/meshDesignSystem/meshDesignSystemResponsive-640@2x.png 640w,
+                                         /img/design/meshDesignSystem/meshDesignSystemResponsive-768@2x.png 768w,
+                                         /img/design/meshDesignSystem/meshDesignSystemResponsive-1024@2x.png 1024w,
+                                         /img/design/meshDesignSystem/meshDesignSystemResponsive-1366@2x.png 1366w,
+                                         /img/design/meshDesignSystem/meshDesignSystemResponsive-1600@2x.png 1600w,
+                                         /img/design/meshDesignSystem/meshDesignSystemResponsive-1920@2x.png 1920w"
+                                 sizes="(max-width: 760px) 100vw,
+                                        960px"
+                                 src="/img/design/meshDesignSystem/meshDesignSystemResponsive-1920@2x.png"
+                                 alt=""
+                                 width="1920" height="1080"
+                            >
+                        </a>
+                    </div>
+                    <div class="text-container">
+                        <p class="image-caption">The MESH app scales fluidly and dynamically utilises extra space on larger screens.</p>
+                    </div>
+                </div>
+                <div class="text-container">
+                    <p>Rounding out the design system is a changelog which keeps everyone up to date. Changes are tagged as new features, housekeeping, or documentation and can be marked as ready, in-progress, or pre-release.</p>
+                </div>
+                <div class="article-image-container">
+                    <div class="img-container aspect-16-9">
+                        <div></div>
+                        <a href="/img/design/meshDesignSystem/meshDesignSystemChangelog@2x-hq.png" class="zoom">
+                            <img srcset="/img/design/meshDesignSystem/meshDesignSystemChangelog-640@2x.png 640w,
+                                         /img/design/meshDesignSystem/meshDesignSystemChangelog-768@2x.png 768w,
+                                         /img/design/meshDesignSystem/meshDesignSystemChangelog-1024@2x.png 1024w,
+                                         /img/design/meshDesignSystem/meshDesignSystemChangelog-1366@2x.png 1366w,
+                                         /img/design/meshDesignSystem/meshDesignSystemChangelog-1600@2x.png 1600w,
+                                         /img/design/meshDesignSystem/meshDesignSystemChangelog-1920@2x.png 1920w"
+                                 sizes="(max-width: 760px) 100vw,
+                                        960px"
+                                 src="/img/design/meshDesignSystem/meshDesignSystemChangelog-1920@2x.png"
+                                 alt=""
+                                 width="1920" height="1080"
+                            >
+                        </a>
+                    </div>
+                    <div class="text-container">
+                        <p class="image-caption">The changelog keeps everyone on the same page.</p>
+                    </div>
+                </div>
+                <div class="text-container">
+                    <h2 id="takeaways">Takeaways <a href="#takeaways" class="anchor-link">#</a></h2>
+                    <p>The design system greatly improved our workflow internally. It certainly sped up my work within Figma, allowing me to easily add common components to new designs and select their appropriate variants. Tokens, too, allow me to build quickly while keeping things consistent.</p>
+                    <p>It also vastly sped up our rebuild, which could have been a far greater undertaking without those tokens and components. The front-end developer took time to build out the system first, speeding up their subsequent build of all the individual pages and flows.</p>
+                    <p>And finally, it’s been a hit with users, with excellent response to the new look and speed of the app.<span class="end-mark">&ensp;☼</span></p>
+                    <!-- FOOTNOTES -->
+                    <hr>
+                    <ol class="footnotes">
+                        <li id="fn-1">
+                            <p>The button component includes variables  for multiple sizes and styles, and dialogs have different options for leading icons and button arrangements. Table views (lists) are super versatile with many subcomponents like leading elements for icons or images and trailing elements for radios, checkboxes, or disclosure indicators. Posts can have a card appearance to signify that it can be tapped, or appear directly on the surface once it’s been opened; it also has variables for user input that include images, links, or overflow text. The top toolbar has numerous configurations depending on the page type: home, sub-level, a modal flow, a task sequence, or search.</p>
+                            <p>So many different possibilities for each component that can all quickly and easily be swapped out or specified automatically.&nbsp;<a href="#fnr-1" class="fn-back-link">⤶</a></p>
+                        </li>
+                        <li id="fn-2">
+                            My own personal preferences aligned very well with our user needs here!&nbsp;<a href="#fnr-2" class="fn-back-link">⤶</a>
+                        </li>
+                    </ol>
+                </div>
+            </article>
+        </main>
+        <!--
+            FOOTER
+        -->
+        <footer class="flex-v">
+            <ul class="contact-list flex-h">
+                    <li><b>Connect:</b></li>
+                    <li><a href="mailto:michael.klepacki@me.com" title="Email" class="link-out" >Email</a></li>
+                    <li><a href="https://mastodon.design/@kleypack" rel="me" title="Mastodon | @kleypack@mastodon.design" target="_blank" class="link-out" >Mastodon</a></li>
+                    <li><a href="https://letterboxd.com/kleypack" title="Letterboxd | @kleypack" target="_blank" class="link-out">Letterboxd</a></li>
+                    <li><a href="https://literal.club/kleypack" title="Literal | @kleypack" target="_blank" class="link-out">Literal</a></li>
+            </ul>
+            <div class="flex-h flex-gap-s">
+                <p class="flex-grow">&copy; 2025 Michael Klepacki. Built from scratch with love, sweat, & tears.</p>
+                <p><a href="#top" class="back-to-top">Back to top</a></p>
+            </div>
+        </footer>
+    </body>
+</html>

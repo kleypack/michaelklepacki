@@ -36,13 +36,13 @@
 						</a>
 					</li>
 					<li>
-						<a class="inactive-page" href="/design/">Design</a>
+						<a href="/portfolio/">Portfolio</a>
 					</li>
 					<li>
-						<a class="inactive-page" href="/hobbies/">Hobbies</a>
+						<a href="/hobbies/">Hobbies</a>
 					</li>
 					<li>
-						<a class="inactive-page" href="/all/">All</a>
+						<a href="/all/">All</a>
 					</li>
 				</ul>
 			</nav>
@@ -50,20 +50,19 @@
 		<!--
 			PAGE
 		-->
-		<main>
-			<section class="text-container">
-				<h1>Panic! at the 404</h1>
-				<p class="lede">Oops&#8239;—&#8239;the page you’re looking for doesn’t seem to exist. Could be a spelling error, or maybe I changed something on my end.</p>
-				<p class="lede">Try the navigation bar up top. ☝︎ Otherwise, when in doubt, just head back <a href="/">home</a>.</p>
-				<div class="article-image-container">
-					<div class="img-container aspect-4-3">
-						<div></div>
-						<a href="https://www.youtube.com/watch?v=vc6vs-l5dkc" target="_blank">
-							<img src="/img/404/panicAtTheDisco.jpg" alt="A screenshot from the music video for Panic! at the Disco's 'I Write Sins, Not Tragedies' featuring a wide-eyed man in a black top hot and red and black suit making a cross with white-gloved fingers in front of his mouth." />
-						</a>
-					</div>
-				</div>
-			</section>
+		<main class="normal">
+			<header class="mt-3xl">
+				<h1 class="small-heading">Error 404</h1>
+			</header>
+			<h2 class="mt-s"><a class="hidden-link" href="javascript:void(0);" id="secretTrigger" onclick="toggleHidden()">Don’t panic</a></h2>
+			<p class="lede">The page you’re looking for doesn’t seem to exist. Could be a spelling error, or maybe I changed something on my end.</p>
+			<p class="lede">Try the navigation bar up top. Otherwise, when in doubt, just head back <a href="/">home</a>.</p>
+			<div id="secret" class="video-container hidden">
+				<video controls width="854" height="480" poster="/404/dont-panic-thumb.png">
+					<source src="/404/dont-panic.mp4" type="video/mp4">
+				</video>
+			</div>
+			<script src="/js/easter-egg.js"></script>
 		</main>
 		<!--
 			FOOTER

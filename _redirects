@@ -1,0 +1,6 @@
+# FROM                        TO
+/design                       /portfolio
+/design/exploration           /portfolio/exploration
+/design/icons                 /portfolio/icons
+/design/work                  /portfolio/ui-design
+/inventory                    /uses
