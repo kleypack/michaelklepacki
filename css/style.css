@@ -1866,6 +1866,10 @@ p.book-author {
 		--color-chat-bubble-received: color(display-p3 0.2852 0.2151 0.2186);
 		--color-chat-bubble-sent: color(display-p3 0.21 0.19 0.209);
 
+		/* --color-chat-bubble-green: color(display-p3 0.8626 0.8704 0.7696); */
+		--color-chat-bubble-yellow: color(display-p3 0.34949 0.29287 0.07675);
+		--color-chat-bubble-purple: color(display-p3 0.2111 0.18922 0.24647);
+
 		/* Typography */
 		--font-weight-bold: 700;
 
