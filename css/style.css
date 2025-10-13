@@ -997,7 +997,7 @@ main {
 	width: 96rem;
 }
 
-grid,
+.grid,
 ul.grid {
 	display: grid;
 	grid-gap: var(--space-s);
@@ -1018,6 +1018,10 @@ ul.grid {
 	display: grid;
 	grid-template-columns: 1fr 1fr 1fr;
 	grid-gap: var(--space-s);
+}
+
+.grid-4 {
+	grid-template-columns: 1fr 1fr 1fr 1fr;
 }
 
 .chat-container {
