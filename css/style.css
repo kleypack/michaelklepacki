@@ -2092,6 +2092,11 @@ p.book-author {
 		margin-right: 4%;
 	}
 
+	.screenplay .brads div {
+		width: 0.4rem;
+		height: 0.4rem;
+	}
+
 	.gallery-img-container {
 		display: block;
 		margin: var(--space) 0;
