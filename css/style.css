@@ -1433,7 +1433,7 @@ nav ul li:last-child a {
 	/* background-image: url("/icons/homeNav/styleguide.svg"); */
 }
 
-.home-nav .404:before {
+.home-nav .fourohfour:before {
 	/* content: '⛓️‍💥'; */
 	-webkit-mask-image: url("/icons/homeNav/broken-link.svg");
 	mask-image: url("/icons/homeNav/broken-link.svg");
