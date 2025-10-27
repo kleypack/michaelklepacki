@@ -1056,6 +1056,10 @@ ul.grid {
 	grid-template-columns: 1fr 1fr 1fr 1fr;
 }
 
+.grid-5 {
+	grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+}
+
 .chat-container {
 	margin: 1em 0;
 }
@@ -1623,7 +1627,8 @@ footer li {
 }
 
 .book,
-.screenplay {
+.screenplay,
+.zine {
 	position: relative;
 	flex-shrink: 0;
 	width: 25%;
@@ -1634,8 +1639,13 @@ footer li {
 	aspect-ratio: 8.5 / 11;
 }
 
+.zine {
+	aspect-ratio: 1 / 1.33;
+}
+
 .book-cover,
-.screenplay-cover {
+.screenplay-cover,
+.zine-cover {
 	position: absolute;
 	z-index: 1;
 	width: 100%;
@@ -1654,8 +1664,14 @@ footer li {
 	box-shadow: 0px 3px 6px -1px var(--color-light-shadow);
 }
 
+.zine-cover {
+	aspect-ratio: 1 / 1.33;
+	border-radius: var(--border-radius-xxs);
+}
+
 .book-cover img,
-.screenplay-cover img {
+.screenplay-cover img,
+.zine-cover img {
 	width: 100%;
 	height: 100%;
 	object-fit: cover;
@@ -1690,7 +1706,8 @@ footer li {
 	box-shadow: inset 0px -1px 1px var(--color-light-shadow);
 }
 
-.book-cover .light {
+.book-cover .light,
+.zine-cover .light {
 	content: "";
 	position: absolute;
 	top: 0;
@@ -1731,7 +1748,8 @@ footer li {
 	box-shadow: 0 1px 2px var(--color-light-shadow-heavy), 0 1px 1px gold inset;
 }
 
-.currently-reading .book-cover {
+.currently-reading .book-cover,
+.currently-reading .zine-cover {
 	transform: perspective(1500px) rotateY(-30deg);
 	transform-style: preserve-3d;
 	-webkit-transform-style: preserve-3d;
@@ -1753,7 +1771,8 @@ footer li {
 			transparent 8%);
 }
 
-.currently-reading .book-cover .light {
+.currently-reading .book-cover .light,
+.currently-reading .zine-cover .light {
 	left: 30%;
 	width: 70%;
 	background:
@@ -1765,7 +1784,8 @@ footer li {
 	transition: all 0.5s ease-out;
 }
 
-.currently-reading:hover .book-cover {
+.currently-reading:hover .book-cover,
+.currently-reading:hover .zine-cover {
 	transform: perspective(1000px) rotateY(-40deg);
 	transform-style: preserve-3d;
 	box-shadow:
@@ -1773,7 +1793,8 @@ footer li {
 		0px 8px 16px -8px var(--color-light-shadow-heavy);
 }
 
-.currently-reading:hover .book-cover .light {
+.currently-reading:hover .book-cover .light,
+.currently-reading:hover .zine-cover .light {
 	left: 0;
 	width: 100%;
 }
@@ -1783,9 +1804,16 @@ footer li {
 	height: 98%;
 	position: relative;
 	top: 1%;
-	border: 4px solid hsl(40 4 29);
+	border: 3px solid hsl(40 4 29);
 	border-radius: var(--border-radius-xxs);
 	background: hsl(39 24 96);
+	box-shadow:
+		0px 3px 6px -2px var(--color-light-shadow-heavy),
+		inset -2px 0 hsl(39 24 70);
+}
+
+.zine .book-pages {
+	border: 1px solid hsl(40 4 29);
 	box-shadow:
 		0px 3px 6px -2px var(--color-light-shadow-heavy),
 		inset -2px 0 hsl(39 24 70);
