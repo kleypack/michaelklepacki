@@ -590,8 +590,8 @@ a {
 	color: var(--color-text);
 	text-underline-offset: 0.16em;
 	text-decoration-color: var(--color-text-secondary);
-	-webkit-transition: 0.2s;
-	transition: 0.2s;
+	-webkit-transition: 0.4s;
+	transition: 0.4s;
 }
 
 a:not(.button):focus {
@@ -610,8 +610,8 @@ a:not(.button):focus {
 	ul:not(nav *) li a:hover,
 	ol li a:hover {
 		background-color: var(--color-surface-secondary);
-		box-shadow: 0 0 0 3px var(--color-surface-secondary);
-		animation: a-breathe 4.2s ease-in-out 0.2s infinite;
+		box-shadow: 0 0 0 4px var(--color-surface-secondary);
+		/* animation: a-breathe 4.2s ease-in-out 0.5s infinite; */
 	}
 
 	@keyframes a-breathe {
