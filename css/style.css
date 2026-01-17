@@ -1482,8 +1482,12 @@ nav ul li:last-child a {
 	margin: 0;
 	color: var(--color-text-secondary);
 	/* text-shadow: 0 0 6px var(--color-surface-bg); */
-	text-shadow: -1px -1px 0 var(--color-surface-bg), 1px -1px 0 var(--color-surface-bg),
-	  -1px 1px 0 var(--color-surface-bg), 1px 1px 0 var(--color-surface-bg);
+	/* text-shadow: -1px -1px 0 var(--color-surface-bg), 1px -1px 0 var(--color-surface-bg),
+	  -1px 1px 0 var(--color-surface-bg), 1px 1px 0 var(--color-surface-bg); */
+	text-shadow:
+		0 0 1px var(--color-surface-bg),
+		0 0 4px var(--color-surface-bg),
+		0 0 8px var(--color-surface-bg);
 	font-size: 1.4rem;
 	list-style-type: none;
 }
@@ -2144,14 +2148,6 @@ p.book-author {
 		background: var(--color-surface-bg);
 		background-blend-mode: normal;
 		padding: 0 var(--space);
-	}
-
-	body::-webkit-scrollbar {
-		width: var(--space-s);
-	}
-
-	body::-webkit-scrollbar-thumb {
-		border: 1px solid var(--color-surface-bg);
 	}
 
 	.image-caption {
