@@ -2220,7 +2220,7 @@ p.book-author {
 	}
 
 	#current-month {
-		display: none;
+		margin-left: 1.5em;
 	}
 
 	footer .flex-h,
