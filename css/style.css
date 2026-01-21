@@ -2198,6 +2198,10 @@ p.book-author {
 		height: 4rem;
 	}
 
+	.subnav-timeline {
+		max-height: 500px;
+	}
+
 	.gallery {
 		padding-left: 5ch;
 	}
