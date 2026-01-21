@@ -2198,7 +2198,8 @@ p.book-author {
 	}
 
 	.gallery img {
-		max-height: 100vh;
+		height: auto;
+		width: 100%;
 		margin: var(--space-s) 0;
 	}
 
