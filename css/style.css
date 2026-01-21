@@ -256,6 +256,10 @@ html {
 	}
 }
 
+.timeline {
+	scroll-behavior: auto;
+}
+
 body {
 	/* Layout & Display */
 	display: flex;
@@ -280,6 +284,7 @@ body {
 	/* Misc */
 	overflow-x: hidden;
 	overflow-y: scroll;
+	scroll-behavior: smooth;
 }
 
 .no-scroll {
