@@ -2204,6 +2204,7 @@ p.book-author {
 
 	.gallery img {
 		height: auto;
+		max-height: 100%;
 		width: 100%;
 		margin: var(--space-s) 0;
 	}
