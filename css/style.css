@@ -1987,8 +1987,11 @@ p.book-author {
 	width: 100vw;
 	margin-top: var(--space-3xl);
 	margin-left: -5.2rem;
+}
+
+.temp-giant-footer p {
 	font-size: 24vw;
-	font-weight: 900;
+	font-weight: 700;
 	letter-spacing: -0.08em;
 	text-transform: uppercase;
 	text-wrap: nowrap;
