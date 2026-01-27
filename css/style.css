@@ -1983,6 +1983,19 @@ p.book-author {
 	gap: var(--space-xxl) var(--space-l) !important;
 }
 
+.temp-giant-footer {
+	width: 100vw;
+	margin-top: var(--space-3xl);
+	margin-left: -5.2rem;
+	font-size: 24vw;
+	font-weight: 900;
+	letter-spacing: -0.08em;
+	text-transform: uppercase;
+	text-wrap: nowrap;
+	line-height: 0.9;
+}
+
+
 
 /* ==========================================================================
    Dark Mode
