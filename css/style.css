@@ -284,6 +284,68 @@ q:before {
 
 }
 
+@media (prefers-color-scheme: dark) {
+	:root {
+
+		/* Color: Surface */
+		--color-surface-bg: color(display-p3 0.10176 0.10071 0.09826);
+		--color-surface-secondary: color(display-p3 0.30024 0.29413 0.27997 / 0.5);
+		--color-surface-scrim: color(display-p3 0.10176 0.10071 0.09826 / 0.6);
+
+		/* Color: Interactive */
+		--color-nav-surface: linear-gradient(
+			color(display-p3 0.37272 0.36512 0.34755 / 0.86),
+			color(display-p3 0.24848 0.24342 0.2317 / 0.86) 46%,
+			color(display-p3 0.16565 0.16228 0.15446 / 0.86) 54%,
+			color(display-p3 0.24848 0.24342 0.2317 / 0.86)
+		);
+		--color-nav-inset-highlight: color(display-p3 1 1 1 / 0.15);
+		/* ↓ Same as --color-shadow-weak ↓ */
+		--color-nav-shadow: color(display-p3 0.03006 0.01879 0.00862 / 0.8);
+
+		--color-button-surface: linear-gradient(
+			color(display-p3 0.37272 0.36512 0.34755 / 0.86),
+			color(display-p3 0.24848 0.24342 0.2317 / 0.86) 46%,
+			color(display-p3 0.16565 0.16228 0.15446 / 0.86) 54%,
+			color(display-p3 0.24848 0.24342 0.2317 / 0.86)
+		);
+		--color-button-inset-highlight: color(display-p3 1 1 1 / 0.15);
+		--color-button-inset-shadow: color(display-p3 0.01132 0.01053 0.0087);
+		/* ↓ Same as --color-shadow-heavy ↓ */
+		--color-button-shadow: color(display-p3 0.01132 0.01053 0.0087);
+
+		--color-scrollbar: color(display-p3 0.55349 0.52332 0.44894 / 0.7);
+		--color-scrollbar-hover: color(display-p3 0.55349 0.52332 0.44894);
+
+		/* Color: Text */
+		--color-text: color(display-p3 0.75926 0.7344 0.68065);
+		--color-text-secondary: color(display-p3 0.57176 0.5312 0.43208);
+		--color-text-tertiary: color(display-p3 0.42209 0.39717 0.3402);
+
+		/* Color: Lighting */
+		--color-surface-inset-highlight: color(display-p3 0.38548 0.37026 0.33524 / 0.6);
+		--color-surface-inset-shadow: color(display-p3 0.01132 0.01053 0.0087);
+		--color-surface-bevel-highlight: color(display-p3 0.38548 0.37026 0.33524 / 0.5);
+
+		--color-shadow: color(display-p3 0.01132 0.01053 0.0087);
+		--color-shadow-heavy: color(display-p3 0.01132 0.01053 0.0087);
+		--color-shadow-weak: color(display-p3 0.01132 0.01053 0.0087);
+
+		--color-shadow-neutral: color(display-p3 0.01 0.01 0.01 / 0.5);
+		--color-shadow-neutral-weak: color(display-p3 0.01 0.01 0.01 / 0.2);
+
+		/* Color: Chat Bubbles */
+		--color-chat-bubble-received: color(display-p3 0.2852 0.2151 0.2186);
+		--color-chat-bubble-sent: color(display-p3 0.21 0.19 0.209);
+		--color-chat-bubble-green: color(display-p3 0.23105 0.26155 0.19535);
+		--color-chat-bubble-yellow: color(display-p3 0.34949 0.29287 0.07675);
+		--color-chat-bubble-purple: color(display-p3 0.2111 0.18922 0.24647);
+
+		/* Color: Misc */
+		--color-yellow: color(display-p3 0.34949 0.29287 0.07675);
+	}
+}
+
 
 
 /* ==========================================================================
@@ -362,16 +424,22 @@ body {
 /* Webkit - Preferred Styling */
 @supports selector(::-webkit-scrollbar) {
 
-	::-webkit-scrollbar {
+	:root,
+	* {
+		scrollbar-width: auto;
+		scrollbar-color: var(--color-scrollbar) transparent;
+	}
+
+	*::-webkit-scrollbar {
 		width: var(--space);
 	}
 
-	::-webkit-scrollbar-track {
+	*::-webkit-scrollbar-track {
 		background-color: var(--color-surface-bg);
 		box-shadow: inset 1px 0px 4px var(--color-shadow-weak);
 	}
 
-	::-webkit-scrollbar-thumb {
+	*::-webkit-scrollbar-thumb {
 		border-radius: var(--border-radius-round);
 		border: 2px solid var(--color-surface-bg);
 		background-color: var(--color-scrollbar);
@@ -379,7 +447,7 @@ body {
 		transition: 0.2s;
 	}
 
-	::-webkit-scrollbar-thumb:hover {
+	*::-webkit-scrollbar-thumb:hover {
 		background-color: var(--color-scrollbar-hover);
 	}
 
@@ -388,7 +456,8 @@ body {
 /* Fallback Styling */
 @supports (not (selector(::-webkit-scrollbar))) {
 
-	html {
+	:root,
+	* {
 		scrollbar-width: auto;
 		scrollbar-color: var(--color-scrollbar) transparent;
 	}
@@ -693,7 +762,8 @@ a:not(.button):focus {
 	p a:hover,
 	h2 a:hover,
 	ul:not(nav *) li a:hover,
-	ol li a:hover {
+	ol li a:hover,
+	.social-link:hover {
 		background-color: var(--color-surface-secondary);
 		box-shadow: 0 0 0 4px var(--color-surface-secondary);
 		/* animation: a-breathe 4.2s ease-in-out 0.5s infinite; */
@@ -798,6 +868,7 @@ a.button:focus {
 	content: "\2197"; /* ↗︎ */
 	display: inline-block;
 	margin-left: .3em;
+	color: var(--color-text-secondary);
 	text-decoration: none;
 }
 
@@ -827,6 +898,14 @@ a.button:focus {
 	display: inline-block;
 	margin-left: .3em;
 	text-decoration: none;
+}
+
+.back-to-top.fixed {
+	position: fixed;
+	bottom: var(--space-xl);
+	right: var(--space-l);
+	width: fit-content;
+	text-wrap: nowrap;
 }
 
 .social-link {
@@ -2132,67 +2211,6 @@ p.book-author {
 
 	:root {
 
-		/* Color: Surface */
-		--color-surface-bg: color(display-p3 0.10176 0.10071 0.09826);
-		--color-surface-secondary: color(display-p3 0.30024 0.29413 0.27997 / 0.5);
-		--color-surface-scrim: color(display-p3 0.10176 0.10071 0.09826 / 0.6);
-
-		/* Color: Interactive */
-		--color-nav-surface: linear-gradient(
-			color(display-p3 0.37272 0.36512 0.34755 / 0.86),
-			color(display-p3 0.24848 0.24342 0.2317 / 0.86) 46%,
-			color(display-p3 0.16565 0.16228 0.15446 / 0.86) 54%,
-			color(display-p3 0.24848 0.24342 0.2317 / 0.86)
-		);
-		--color-nav-inset-highlight: color(display-p3 1 1 1 / 0.15);
-		/* ↓ Same as --color-shadow-weak ↓ */
-		--color-nav-shadow: color(display-p3 0.03006 0.01879 0.00862 / 0.8);
-
-		--color-button-surface: linear-gradient(
-			color(display-p3 0.37272 0.36512 0.34755 / 0.86),
-			color(display-p3 0.24848 0.24342 0.2317 / 0.86) 46%,
-			color(display-p3 0.16565 0.16228 0.15446 / 0.86) 54%,
-			color(display-p3 0.24848 0.24342 0.2317 / 0.86)
-		);
-		--color-button-inset-highlight: color(display-p3 1 1 1 / 0.15);
-		--color-button-inset-shadow: color(display-p3 0.01132 0.01053 0.0087);
-		/* ↓ Same as --color-shadow-heavy ↓ */
-		--color-button-shadow: color(display-p3 0.01132 0.01053 0.0087);
-
-		--color-scrollbar: color(display-p3 0.55349 0.52332 0.44894 / 0.7);
-		--color-scrollbar-hover: color(display-p3 0.55349 0.52332 0.44894);
-
-		/* Color: Text */
-		--color-text: color(display-p3 0.75926 0.7344 0.68065);
-		--color-text-secondary: color(display-p3 0.57176 0.5312 0.43208);
-		--color-text-tertiary: color(display-p3 0.42209 0.39717 0.3402);
-
-		/* Color: Lighting */
-		--color-surface-inset-highlight: color(display-p3 0.38548 0.37026 0.33524 / 0.6);
-		--color-surface-inset-shadow: color(display-p3 0.01132 0.01053 0.0087);
-		--color-surface-bevel-highlight: color(display-p3 0.38548 0.37026 0.33524 / 0.5);
-
-		--color-shadow: color(display-p3 0.01132 0.01053 0.0087);
-		--color-shadow-heavy: color(display-p3 0.01132 0.01053 0.0087);
-		--color-shadow-weak: color(display-p3 0.01132 0.01053 0.0087);
-
-		--color-shadow-neutral: color(display-p3 0.01 0.01 0.01 / 0.5);
-		--color-shadow-neutral-weak: color(display-p3 0.01 0.01 0.01 / 0.2);
-
-		/* Color: Chat Bubbles */
-		--color-chat-bubble-received: color(display-p3 0.2852 0.2151 0.2186);
-		--color-chat-bubble-sent: color(display-p3 0.21 0.19 0.209);
-		--color-chat-bubble-green: color(display-p3 0.23105 0.26155 0.19535);
-		--color-chat-bubble-yellow: color(display-p3 0.34949 0.29287 0.07675);
-		--color-chat-bubble-purple: color(display-p3 0.2111 0.18922 0.24647);
-
-		/* Color: Misc */
-		--color-yellow: color(display-p3 0.34949 0.29287 0.07675);
-
-	}
-
-	:root {
-
 		--color-light-brighten: hsla(40, 5%, 50%, 60%);
 		--color-light-brighten-weak: hsla(40, 8%, 36%, 84%);
 		--color-light-shadow: hsla(40, 15%, 2%, 60%);
@@ -2418,6 +2436,10 @@ p.book-author {
 	.wide-container {
 		width: 100%;
 		left: 0;
+	}
+
+	.back-to-top.fixed {
+		position: inherit;
 	}
 }
 
