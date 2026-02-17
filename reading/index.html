@@ -26,34 +26,71 @@
 		<header>
 			<a href="#main-content" class="skip-to-content-link">Skip to content</a>
 			<nav>
-				<ul>
-					<li>
-						<a href="/" class="logo">
-							<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-								<path fill-rule="evenodd" clip-rule="evenodd" d="M2.5 15.75V5.5C2.5 4.94772 2.94772 4.5 3.5 4.5C3.74815 4.5 3.9752 4.59039 4.15 4.74004L11.0411 10.5618L20.9735 4.64966C21.1264 4.55478 21.3068 4.5 21.5 4.5C22.0523 4.5 22.5 4.94772 22.5 5.5V15.7363L22.5 15.75C22.5 17.3227 21.2899 18.6127 19.75 18.7397V18.75H5.5C3.84315 18.75 2.5 17.4069 2.5 15.75ZM4.5 7.65392L15.2668 16.75H5.5C4.94772 16.75 4.5 16.3023 4.5 15.75V7.65392ZM20.5 7.259L12.6573 11.9273L18.3659 16.75H19.5C20.0523 16.75 20.5 16.3023 20.5 15.75L20.5 7.259Z" fill="#2B2B2B"/>
-							</svg>
-							<span class="logo-text">Michael Klepacki</span>
-						</a>
-					</li>
-					<li>
-						<a href="/portfolio/">Portfolio</a>
-					</li>
-					<li>
-						<a href="/hobbies/">Hobbies</a>
-					</li>
-					<li>
-						<a href="/all/">All</a>
-					</li>
-				</ul>
-			</nav>
+                <a href="/" class="logo">
+                    <span class="logo-text">Michael Klepacki</span>
+                </a>
+                <a href="/reading/" class="link-reading">
+                    Reading Log
+                </a>
+            </nav>
 		</header>
 		<!--
 			PAGE
 		-->
 		<main>
 			<div class="text-container">
-				<h1>Reading</h1>
+				<h1>Reading log</h1>
 				<p class="lede">I love speculative fiction, dark gothic tales, new worlds to explore, and the classics.</p>
+				<section id="recent-favs">
+					<h2>Recent favourites <a href="#2026" class="anchor-link">#</a></h2>
+					<div class="bookshelf">
+						<div class="books-on-shelf">
+							<div class="book">
+								<a href="#dracula">
+									<div class="book-cover" style="background-image: url('/img/reading/dracula.jpg');">
+										<div class="binding"></div>
+										<div class="light"></div>
+									</div>
+								</a>
+							</div>
+							<div class="book">
+								<a href="#carmilla">
+									<div class="book-cover" style="background-image: url('/img/reading/carmilla-alt.jpg');">
+										<div class="binding"></div>
+										<div class="light"></div>
+									</div>
+								</a>
+							</div>
+							<div class="book">
+								<a href="#orbital">
+									<div class="book-cover" style="background-image: url('/img/reading/orbital.jpg');">
+										<div class="binding"></div>
+										<div class="light"></div>
+									</div>
+								</a>
+							</div>
+							<div class="book">
+								<a href="#the-haunting-of-hill-house">
+									<div class="book-cover" style="background-image: url('/img/reading/theHauntingOfHillHouse.jpg');">
+										<div class="binding"></div>
+										<div class="light"></div>
+									</div>
+								</a>
+							</div>
+							<div class="book">
+								<a href="#making-movies">
+									<div class="book-cover" style="background-image: url('/img/reading/makingMovies.jpg');">
+										<div class="binding"></div>
+										<div class="light"></div>
+									</div>
+								</a>
+							</div>
+						</div>
+						<div class="shelf">
+							<img width="1680" height="69" src="/img/hobbies/bookshelf.png" alt="bookcase">
+						</div>
+					</div>
+				</section>
 				<ul class="diary-sub-nav">
 					<li>Finished in:</li>
 					<li><a href="#2026">2026</a></li>
@@ -66,27 +103,46 @@
 				<section id="2026" class="flex-v flex-gap-xxl">
 					<div class="flex-h-text flex-gap-s reading-section-header">
 						<h2 class="flex-grow">2026 <a href="#2026" class="anchor-link">#</a></h2>
-						<p class="color-secondary">2 books and counting…</p>
+						<p class="color-secondary">3 books and counting…</p>
 					</div>
 					<div class="reading-container">
-						<div class="book currently-reading">
+                        <div class="book currently-reading">
+                            <div class="book-cover">
+                                <img src="/img/reading/littleBossesEverywhere.jpg" alt="Harry Potter and the Prisoner of Azkaban" width="150" height="225">
+                                <div class="binding"></div>
+                                <div class="light"></div>
+                            </div>
+                            <div class="book-pages"></div>
+                            <div class="bookmark"></div>
+                        </div>
+                        <div class="reading-info">
+                            <div class="book-details">
+                                <p class="book-title">Little Bosses Everywhere</p>
+                                <p class="book-author">Bridget Read</p>
+                            </div>
+                            <div class="book-review">
+                                <p class="book-rating"></p>
+                            </div>
+                            <p class="reading-dates"><span class="hidden">03 Feb 2026</span>currently reading…</p>
+                        </div>
+                    </div>
+                    <div class="reading-container">
+						<div class="book">
 							<div class="book-cover">
 								<img src="/img/reading/hpPrisonerOfAzkaban.jpg" alt="Harry Potter and the Prisoner of Azkaban" width="150" height="225">
 								<div class="binding"></div>
 								<div class="light"></div>
 							</div>
-							<div class="book-pages"></div>
-							<div class="bookmark"></div>
 						</div>
 						<div class="reading-info">
 							<div class="book-details">
 								<p class="book-title">Harry Potter and the Prisoner of Azkaban</p>
-								<p class="book-author">J.K. Rowling 🤢</p>
+								<p class="book-author">J.K. Rowling</p>
 							</div>
 							<div class="book-review">
 								<p class="book-rating"></p>
 							</div>
-							<p class="reading-dates"><span class="hidden">12 Jan 2026</span>currently reading…</p>
+							<p class="reading-dates">12 Jan – 02 Feb 2026</p>
 						</div>
 					</div>
 					<div class="reading-container">
@@ -138,7 +194,7 @@
 						<h2 class="flex-grow">2025 <a href="#2025" class="anchor-link">#</a></h2>
 						<p class="color-secondary">14 books finished</p>
 					</div>
-					<div class="reading-container">
+					<div class="reading-container anchor" id="dracula">
 						<div class="book">
 							<div class="book-cover">
 								<img src="/img/reading/dracula.jpg" alt="Dracula" width="150" height="225">
@@ -223,7 +279,7 @@
 							<p class="reading-dates">11 Oct – 24 Oct 2025</p>
 						</div>
 					</div>
-					<div class="reading-container">
+					<div class="reading-container anchor" id="carmilla">
 						<div class="book">
 							<div class="book-cover">
 								<img src="/img/reading/carmilla-alt.jpg" alt="Carmilla" width="150" height="225">
@@ -265,7 +321,7 @@
 							<p class="reading-dates">08 Sep – 04 Oct 2025</p>
 						</div>
 					</div>
-					<div class="reading-container">
+					<div class="reading-container anchor" id="orbital">
 						<div class="book">
 							<div class="book-cover">
 								<img src="/img/reading/orbital.jpg" alt="Orbital" width="150" height="225">
@@ -365,7 +421,7 @@
 							<p class="reading-dates">09 Mar – 05 Apr 2025</p>
 						</div>
 					</div>
-					<div class="reading-container">
+					<div class="reading-container anchor" id="the-haunting-of-hill-house">
 						<div class="book">
 							<div class="book-cover">
 								<img loading="lazy" src="/img/reading/theHauntingOfHillHouse.jpg" alt="The Haunting of Hill House" width="150" height="225">
@@ -386,7 +442,7 @@
 							<p class="reading-dates">23 Feb – 06 Mar 2025</p>
 						</div>
 					</div>
-					<div class="reading-container">
+					<div class="reading-container anchor" id="making-movies">
 						<div class="book">
 							<div class="book-cover">
 								<img loading="lazy" src="/img/reading/makingMovies.jpg" alt="Making Movies" width="150" height="225">
