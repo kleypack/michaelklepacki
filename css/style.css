@@ -243,6 +243,9 @@ q:before {
 	--color-chat-bubble-yellow: color(display-p3 0.9143 0.8772 0.7131);
 	--color-chat-bubble-purple: color(display-p3 0.8763 0.8638 0.893);
 
+	/* Color: Special */
+	--color-tv-body: color(display-p3 0.90057 0.89438 0.8551);
+
 	/* Color: Misc */
 	--color-yellow: color(display-p3 0.9143 0.8772 0.7131);
 
@@ -281,6 +284,10 @@ q:before {
 	--space-xxl: 4rem;
 	--space-3xl: 6.4rem;
 	--space-4xl: 9.6rem;
+
+	/* Special */
+	--cursor-gaming: url('/icons/cursor-controller.svg'), auto;
+	--cursor-gaming-webkit: -webkit-image-set(url('/icons/cursor-controller@2x.png') 2x), auto;
 
 }
 
@@ -341,8 +348,15 @@ q:before {
 		--color-chat-bubble-yellow: color(display-p3 0.34949 0.29287 0.07675);
 		--color-chat-bubble-purple: color(display-p3 0.2111 0.18922 0.24647);
 
+		/* Color: Special */
+		--color-tv-body: color(display-p3 0.20323 0.20013 0.19294);
+
 		/* Color: Misc */
 		--color-yellow: color(display-p3 0.34949 0.29287 0.07675);
+
+		/* Special */
+		--cursor-gaming: url('/icons/cursor-controller-dark.svg'), pointer;
+		--cursor-gaming-webkit: -webkit-image-set(url('/icons/cursor-controller-dark@2x.png') 2x), auto;
 	}
 }
 
@@ -407,6 +421,10 @@ body {
 
 .color-secondary {
 	color: var(--color-text-secondary);
+}
+
+.color-tertiary {
+	color: var(--color-text-tertiary);
 }
 
 .coming-soon {
@@ -1089,10 +1107,10 @@ img {
 	transition: 0.2s;
 }
 
-.gallery img:hover {
+/* .gallery img:hover {
 	transform: scale(101%);
 	box-shadow: 0 24px 18px -22px var(--color-shadow-heavy);
-}
+} */
 
 .month {
 	display: inline-block;
@@ -1518,6 +1536,10 @@ nav a:focus {
 	background-image: url("/icons/20/film-slate-light-20.svg");
 }
 
+.link-gaming::before {
+	background-image: url("/icons/20/game-controller-light-20.svg");
+}
+
 .link-icons::before {
 	background-image: url("/icons/20/app-icon-light-20.svg");
 }
@@ -1612,6 +1634,10 @@ nav a:focus {
 	background-image: url("/icons/24/film-slate-light-24.svg");
 }
 
+.home-nav .gaming::before {
+	background-image: url("/icons/24/game-controller-light-24.svg");
+}
+
 .home-nav .hobbies::before {
 	-webkit-mask-image: url("/icons/homeNav/hobbies.svg");
 	mask-image: url("/icons/homeNav/hobbies.svg");
@@ -1627,8 +1653,7 @@ nav a:focus {
 }
 
 .home-nav .media-log::before {
-	-webkit-mask-image: url("/icons/homeNav/notebook.svg");
-	mask-image: url("/icons/homeNav/notebook.svg");
+	background-image: url("/icons/24/notebook-light-24.svg");
 }
 
 .home-nav .papa::before {
@@ -1741,6 +1766,34 @@ footer li {
 .contact-list {
 	gap: var(--space-xs) var(--space-s);
 	list-style: none;
+}
+
+.signature::after {
+	content: '';
+	display: inline-block;
+	margin-left: var(--space-s);
+	width: var(--space-s);
+	height: var(--space-s);
+	border-radius: var(--border-radius-round);
+	opacity: 1;
+	/* background-color: color(display-p3 0.79347 0.86387 0.9047); */
+	background-color: color(display-p3 0.98362 0.98052 0.95907);
+	animation: breathe 4.2s ease-in-out 0.5s infinite;
+}
+
+@keyframes breathe {
+	0% {
+		opacity: 1;
+	}
+	10% {
+		opacity: 1;
+	}
+	60% {
+		opacity: 0;
+	}
+	100% {
+		opacity: 1;
+	}
 }
 
 
@@ -1952,7 +2005,6 @@ footer li {
 			hsla(0, 0%, 100%, 40%) 0%,
 			hsla(0, 0%, 100%, 15%) 40%,
 			hsla(0, 0%, 100%, 0%) 70%);
-	mix-blend-mode: luminosity;
 	-webkit-filter: blur(0.5px);
 	filter: blur(0.5px);
 }
@@ -2176,6 +2228,187 @@ p.book-author {
 }
 
 
+/* Gaming Page
+   ========================================================================== */
+
+.gaming-page {
+	/* default */
+	cursor: var(--cursor-gaming);
+	/* webkit fallback */
+	cursor: var(--cursor-gaming-webkit);
+}
+
+.gaming-tv {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	gap: 0;
+	position: relative;
+	z-index: 1;
+	margin-top: var(--space);
+	margin-bottom: var(--space-l);
+	width: 100%;
+}
+
+.gaming-tv:hover {
+	cursor: url('/icons/cursor-controller.svg'), pointer;
+}
+
+.gaming-tv .screen {
+	position: relative;
+	z-index: 1;
+	outline: solid 1px var(--color-tv-body);
+	border: 4px solid black;
+	border-bottom: 8px solid black;
+	border-radius: var(--border-radius-xxs);
+	background-color: black;
+	box-shadow:
+		0 30px 16px -20px var(--color-shadow-heavy),
+		0 4px 8px 2px var(--color-shadow),
+		0 2px 4px var(--color-shadow-heavy);
+}
+
+/* glare */
+@media (prefers-color-scheme: light) {
+	.screen::before {
+		content: "";
+		position: absolute;
+		top: -4px;
+		left: 0;
+		z-index: 0;
+		width: 100%;
+		height: 40%;
+		border-radius: var(--border-radius-xxs);
+		background:
+			radial-gradient(
+				ellipse at 50% top,
+				hsla(0, 0%, 100%, 30%) 0%,
+				hsla(0, 0%, 100%, 15%) 40%,
+				hsla(0, 0%, 100%, 0%) 70%);
+		-webkit-filter: blur(0.5px);
+		filter: blur(0.5px);
+	}
+}
+
+/* light leak */
+@media (prefers-color-scheme: dark) {
+	.gaming-tv::before {
+		content: '';
+		position: absolute;
+		top: 0;
+		left: 0;
+		z-index: -1;
+		width: 100%;
+		height: 100%;
+		border-radius: var(--border-radius-xxs);
+		background-image: url('/img/gaming/stellar-blade.jpg');
+		background-size: 100% 100%;
+		-webkit-filter: blur(50px) saturate(70%);
+		filter: blur(50px) saturate(70%);
+	}
+}
+
+/* power indicator */
+.screen::after {
+	content: '';
+	position: absolute;
+	bottom: -4px;
+	left: 50%;
+	transform: translateX(-50%);
+	width: 6px;
+	height: 1px;
+	border-radius: var(--border-radius-round);
+	background-color: color(display-p3 0.79347 0.86387 0.9047);
+}
+
+.game {
+	display: flex;
+	gap: var(--space);
+	margin-top: var(--space-xl);
+}
+
+h2 + .game {
+	margin-top: var(--space-l);
+}
+
+.game img {
+	position: relative;
+	flex-shrink: 0;
+	align-self: flex-start;
+	width: 33%;
+	height: auto;
+	border-radius: var(--border-radius-s);
+}
+
+.game > a {
+	flex-shrink: 0;
+	width: 33%;
+	height: fit-content;
+}
+
+.game > a > img {
+	width: 100%;
+	box-shadow: 0 14px 10px -12px var(--color-shadow-heavy);
+	transition: 0.2s;
+}
+
+.game-info {
+	display: flex;
+	flex-direction: column;
+	gap: var(--space-s);
+	justify-content: space-between;
+	padding: var(--space-s) 0;
+}
+
+.game h3 {
+	margin: 0;
+	font-size: 1.9rem;
+}
+
+.game-system,
+.game-playtime {
+	color: var(--color-text-secondary);
+}
+
+.game-review p + p {
+	margin: 0;
+}
+
+.game-playtime {
+	font-size: 1.4rem;
+}
+
+.gaming-tv img {
+	border-radius: 1px;
+}
+
+.currently-playing {
+	display: flex;
+	align-items: baseline;
+	gap: var(--space-xs);
+	margin-top: 0;
+}
+
+.currently-playing > img {
+	display: none;
+}
+
+.currently-playing .game-info {
+	width: 100%;
+	flex-direction: row;
+	align-items: baseline;
+	justify-content: space-between;
+}
+
+.currently-playing .game-details {
+	display: flex;
+	flex-direction: row;
+	align-items: baseline;
+	gap: var(--space-s);
+}
+
+
+
 /* All Page
    ========================================================================== */
 
@@ -2290,6 +2523,10 @@ p.book-author {
 		background-image: url("/icons/20/film-slate-dark-20.svg");
 	}
 
+	.link-gaming::before {
+		background-image: url("/icons/20/game-controller-dark-20.svg");
+	}
+
 	.link-icons::before {
 		background-image: url("/icons/20/app-icon-dark-20.svg");
 	}
@@ -2354,8 +2591,16 @@ p.book-author {
 		background-image: url("/icons/24/film-slate-dark-24.svg");
 	}
 
+	.home-nav .gaming::before {
+		background-image: url("/icons/24/game-controller-dark-24.svg");
+	}
+
 	.home-nav .icons::before {
 		background-image: url("/icons/24/app-icon-dark-24.svg");
+	}
+
+	.home-nav .media-log::before {
+		background-image: url("/icons/24/notebook-dark-24.svg");
 	}
 
 	.home-nav .papa::before {
@@ -2528,7 +2773,7 @@ p.book-author {
 		max-height: 500px;
 	}
 
-	.gallery {
+	.gallery.has-timeline {
 		padding-left: 5ch;
 	}
 
