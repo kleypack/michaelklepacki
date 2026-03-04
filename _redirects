@@ -1,6 +1,17 @@
 # FROM                        TO
+/work                         /portfolio
 /design                       /portfolio/ui-design
 /design/exploration           /portfolio/exploration
 /design/icons                 /portfolio/icons
+/portfolio/app-icons          /portfolio/icons
 /design/work                  /portfolio/ui-design
 /inventory                    /uses
+/design/good-humans           /portfolio/ui-design/good-humans
+/design/meditation-app-mvp    /portfolio/ui-design/meditation-app-mvp
+/design/mesh-admin-portal     /portfolio/ui-design/mesh-admin-portal
+/design/mesh-design-system    /portfolio/ui-design/mesh-design-system
+/design/mesh-early-iteration  /portfolio/ui-design/mesh-early-iteration
+/design/mesh-redesign         /portfolio/ui-design/mesh-redesign
+/design/mesh-relaunch         /portfolio/ui-design/mesh-relaunch
+/photography                  /photos
+/about                        /colophon
