@@ -3,9 +3,9 @@
     <channel>
         <title>Michael Klepacki</title>
         <link>https://michaelklepacki.com</link>
+        <atom:link href="https://michaelklepacki.com/rss/blog.xml" rel="self" type="application/rss+xml" />
         <description>Hello, from across the wire. Here be musings or, more likely, ramblings.</description>
         <language>en</language>
-        <atom:link href="https://michaelklepacki.com/rss/blog.xml" rel="self" type="application/rss+xml" />
 
         <item>
             <title>07 March 2026</title>
