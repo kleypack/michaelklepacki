@@ -1,17 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
     <channel>
-        <title>Musings, by Michael Klepacki</title>
+        <title>Musings</title>
         <link>https://michaelklepacki.com</link>
-        <description>Hello from across the wire…</description>
+        <description>By Michael Klepacki. Hello from across the wire…</description>
         <language>en</language>
-        <atom:link href="https://michaelklepacki.com/rss/blog.xml" rel="self" type="application/rss+xml"/>
+        <atom:link href="https://michaelklepacki.com/rss/blog.xml" rel="self" type="application/rss+xml"></atom:link>
         <copyright>Copyright 2026 Michael Klepacki.</copyright>
         <item>
             <title>07 March 2026 at 02:36 CET</title>
             <pubDate>Sat, 07 Mar 2026 03:20:00 +0100</pubDate>
             <guid isPermaLink="false">ABD33100-8CFE-4D90-BC93-004502B7B6C9</guid>
-            <link>https://michaelklepacki.com/blog/2026-03-07</link>
+            <link>https://michaelklepacki.com/blog/2026-03-07/index.html</link>
             <description>
                 <p>Lately I’ve been feeling restless. Wanting to stay up all night. It’s the depression, probably. I used to stay up for hours and hours into the night as a teenager. Usually on tumblr, or working on homework I had put off. These days I’m probably fiddling with this site (at best) or doomscrolling (not best, obviously).</p>
                 <p>It’s the depression, probably. But the reason I’m turning here, to this site surely no one but me sees, maybe, is because I’m watching a space I grew up loving be sucked of it’s soul. I used to love the web. It was somehow both a safe haven and an actual wild west within my sheltered desert home. It was where I raised Neopets until my mother needed the phone. Where I chatted on AIM with my improbable long-distance girlfriend. Where I discovered Homestar Runner and its ilk, leading to in-jokes with friends and my first ill-advised email address. Where I played games that required flash like slime basketball as my best friend sat next to me and we shared the keyboard. Where I sailed the Limewire seas to build up my music collection, because music was my best escape from the darkness but I was an adolescent with no allowance.<sup id="2026-03-07-fnr-1" class="fnr"><a href="#2026-03-07-fn-1">1</a></sup></p>
