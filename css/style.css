@@ -89,6 +89,12 @@
 	font-display: swap;
 }
 
+@font-feature-values 'Avona' {
+    @styleset {
+        pointy: 4; /* Enables feature ss04 */
+    }
+}
+
 
 
 /* Testing Zone
@@ -302,6 +308,7 @@ q:before {
 
 		/* Color: Surface */
 		--color-surface-bg: color(display-p3 0.10176 0.10071 0.09826);
+        --color-surface-bg: color(display-p3 0.12157 0.12157 0.118);
 		--color-surface-secondary: color(display-p3 0.30024 0.29413 0.27997 / 0.5);
 		--color-surface-scrim: color(display-p3 0.10176 0.10071 0.09826 / 0.6);
 
@@ -1358,12 +1365,161 @@ ul.grid {
 }
 
 .album-grid {
-    grid-template-columns: 1fr 1fr 1fr;
-    gap: var(--space-xl) !important;
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--space-4xl) !important;
 }
 
-.album-grid img {
+.album-grid li {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space);
+    margin-bottom: calc(-1 * (var(--space) + 2em));
+}
+
+.album-grid li p {
+    padding: 0 var(--space-xs);
+}
+
+.album {
+    position: relative;
+    z-index: 1;
     border-radius: var(--border-radius-xxs);
+    background-color: black;
+}
+
+.album,
+.album::before,
+.album::after {
+    transition: 0.25s ease-in-out;
+}
+
+.album img {
+    border-radius: var(--border-radius-xxs);
+    box-shadow: 0px 4px 6px -3px var(--color-shadow-heavy);
+}
+
+/* Record */
+.album::before {
+    content: '';
+    position: absolute;
+    top: 2%;
+    left: 2%;
+    z-index: -1;
+    width: 96%;
+    height: 96%;
+    border-radius: var(--border-radius-round);
+    background:
+        radial-gradient(
+            circle at 50%,
+            transparent 0%,
+            transparent 2%,
+            hsl(0 0 70) 2%,
+            hsl(0 0 70) 22%,
+            hsl(0 0 0) 22%,
+            hsl(0 0 0) 30%,
+            hsl(0 0 10) 30%,
+            hsl(0 0 10) 39%,
+            hsl(0 0 0) 39%,
+            hsl(0 0 0) 40%,
+            hsl(0 0 10) 40%,
+            hsl(0 0 10) 50%,
+            hsl(0 0 0) 50%,
+            hsl(0 0 0) 51%,
+            hsl(0 0 10) 51%,
+            hsl(0 0 10) 60%,
+            hsl(0 0 0) 60%,
+            hsl(0 0 0) 61%,
+            hsl(0 0 10) 61%,
+            hsl(0 0 10) 68%,
+            hsl(0 0 0) 68%,
+            hsl(0 0 0) 100%);
+}
+
+@media (prefers-color-scheme: dark) {
+    .album::before {
+        background:
+            radial-gradient(
+                circle at 50%,
+                transparent 0%,
+                transparent 2%,
+                hsl(0 0 70) 2%,
+                hsl(0 0 70) 22%,
+                hsl(0 0 0) 22%,
+                hsl(0 0 0) 30%,
+                hsl(0 0 7) 30%,
+                hsl(0 0 7) 39%,
+                hsl(0 0 0) 39%,
+                hsl(0 0 0) 40%,
+                hsl(0 0 7) 40%,
+                hsl(0 0 7) 50%,
+                hsl(0 0 0) 50%,
+                hsl(0 0 0) 51%,
+                hsl(0 0 7) 51%,
+                hsl(0 0 7) 60%,
+                hsl(0 0 0) 60%,
+                hsl(0 0 0) 61%,
+                hsl(0 0 7) 61%,
+                hsl(0 0 7) 68%,
+                hsl(0 0 0) 68%,
+                hsl(0 0 0) 100%);
+    }
+}
+
+/* Glare */
+.album::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 50%;
+    border-radius: var(--border-radius-xxs);
+    background:
+        radial-gradient(
+            ellipse at 50% top,
+            hsla(0, 0%, 100%, 25%) 0%,
+            hsla(0, 0%, 100%, 15%) 40%,
+            hsla(0, 0%, 100%, 0%) 70%);
+    -webkit-filter: blur(0.5px);
+    filter: blur(0.5px);
+}
+
+.album:hover {
+    transform: rotate(-4deg);
+}
+
+/* Glare Hover */
+.album:hover::after {
+    left: 5%;
+    width: 95%;
+    height: 55%;
+}
+
+/* Record Hover */
+.album:hover::before {
+    left: 40%;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .album::before {
+        transition: 0.2s ease-out;
+    }
+
+    .album:hover {
+        transform: none;
+    }
+
+    /* Glare Hover */
+    .album:hover::after {
+        left: 0;
+        width: 100%;
+        height: 50%;
+    }
+
+    /* Record Hover */
+    .album:hover::before {
+        left: 20%;
+    }
 }
 
 .chat-container {
@@ -1625,6 +1781,10 @@ nav:not(.blog-nav) {
 
 .link-icons::before {
 	background-image: url("/icons/20/app-icon-light-20.svg");
+}
+
+.link-music::before {
+    background-image: url("/icons/20/ipod-light-20.svg");
 }
 
 .link-papa::before {
@@ -2546,8 +2706,8 @@ body.blog {
 }
 
 .blog article {
-	margin-bottom: var(--space-4xl);
-	max-width: 48ch;
+	margin-bottom: var(--space-3xl);
+	max-width: 42ch;
 	scroll-margin-top: var(--space-4xl);
 	font-family: var(--font-family-serif);
 	text-wrap: pretty;
@@ -2556,11 +2716,14 @@ body.blog {
 .blog article:not(:last-child)::after {
 	content: '§';
 	display: block;
-	margin-top: var(--space-4xl);
+	margin-top: var(--space-xxl);
 	text-align: center;
 	color: var(--color-text-tertiary);
-	font-family: 'Avona', ui-serif;
+	font-family: 'Avona', 'Avona Serif', ui-serif;
 	font-size: 3.2rem;
+    text-shadow:
+        0 1px 0 var(--color-surface-inset-highlight),
+        0 -1px 1px var(--color-surface-inset-shadow);
 }
 
 .blog time {
@@ -2727,6 +2890,10 @@ body.blog {
 	.link-icons::before {
 		background-image: url("/icons/20/app-icon-dark-20.svg");
 	}
+
+    .link-music::before {
+        background-image: url("/icons/20/ipod-dark-20.svg");
+    }
 
 	.link-papa::before {
 		background-image: url("/icons/20/flower-tulip-dark-20.svg");
@@ -2927,6 +3094,32 @@ body.blog {
 		width: 0.4rem;
 		height: 0.4rem;
 	}
+
+    .album-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: var(--space) !important;
+    }
+
+    .album-grid li {
+        gap: var(--space-s);
+        margin-bottom: initial;
+        overflow-wrap: break-word;
+        hyphens: auto;
+    }
+
+    .album:hover {
+        transform: none;
+    }
+
+    .album:hover::before {
+        left: 10%;
+    }
+
+    .album:hover::after {
+        left: 0;
+        width: 100%;
+        height: 50%;
+    }
 
 	.logo:not(:only-child) .logo-text {
 		display: none;
