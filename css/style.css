@@ -2739,8 +2739,8 @@ body.blog {
 	margin-top: var(--space-l);
 	font-family: var(--font-family);
 	font-size: 1.4rem;
-	text-transform: uppercase;
-	letter-spacing: 0.04em;
+	text-transform: lowercase;
+	letter-spacing: 0.02em;
 }
 
 .permalink a,
@@ -2755,9 +2755,17 @@ body.blog {
 	color: var(--color-text-secondary);
 }
 
+.back-to-blog::before {
+    content: '← ';
+}
+
 .blog-entry main {
 	display: flex;
 	justify-content: center;
+}
+
+.blog .fn-back-link {
+    font-family: var(--font-family);
 }
 
 
