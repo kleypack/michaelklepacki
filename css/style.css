@@ -1989,6 +1989,7 @@ a.active-anchor {
 }
 
 .blog-nav span {
+    margin-bottom: var(--space);
 	color: var(--color-text-secondary);
 }
 
@@ -1998,7 +1999,7 @@ a.active-anchor {
 }
 
 .blog-nav li {
-	margin-bottom: var(--space-s);
+	margin-bottom: var(--space);
 }
 
 .blog-nav a:hover {
@@ -2681,7 +2682,8 @@ h2 + .game {
 /* Blog
    ========================================================================== */
 
-body.blog {
+body.blog,
+body.blog-entry {
 	padding-top: var(--space-3xl);
 }
 
@@ -2705,12 +2707,22 @@ body.blog {
 	grid-column-gap: var(--space-l);
 }
 
+.blog article,
+.blog-entry article {
+    margin-bottom: var(--space-3xl);
+    max-width: 42ch;
+    font-family: var(--font-family-serif);
+    text-wrap: pretty;
+}
+
+@media only screen and (max-width: 760px) {
+    .blog-entry article {
+        max-width: 32ch;
+    }
+}
+
 .blog article {
-	margin-bottom: var(--space-3xl);
-	max-width: 42ch;
-	scroll-margin-top: var(--space-4xl);
-	font-family: var(--font-family-serif);
-	text-wrap: pretty;
+    scroll-margin-top: var(--space-4xl);
 }
 
 .blog article:not(:last-child)::after {
@@ -2726,7 +2738,8 @@ body.blog {
         0 -1px 1px var(--color-surface-inset-shadow);
 }
 
-.blog time {
+.blog time,
+.blog-entry time {
 	display: block;
 	color: var(--color-text-secondary);
 	font-family: var(--font-family);
@@ -2764,7 +2777,8 @@ body.blog {
 	justify-content: center;
 }
 
-.blog .fn-back-link {
+.blog .fn-back-link,
+.blog-entry .fn-back-link {
     font-family: var(--font-family);
 }
 
