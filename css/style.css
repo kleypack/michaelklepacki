@@ -2715,14 +2715,21 @@ body.blog-entry {
     text-wrap: pretty;
 }
 
+.blog article {
+    scroll-margin-top: var(--space-4xl);
+}
+
+@media only screen and (max-width: 760px) {
+    .blog article {
+        text-align: justify;
+        hyphens: auto;
+    }
+}
+
 @media only screen and (max-width: 760px) {
     .blog-entry article {
         max-width: 32ch;
     }
-}
-
-.blog article {
-    scroll-margin-top: var(--space-4xl);
 }
 
 .blog article:not(:last-child)::after {
