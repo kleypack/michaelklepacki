@@ -26,87 +26,409 @@
         <header>
             <a href="#main-content" class="skip-to-content-link">Skip to content</a>
             <nav>
-                <ul>
-                    <li>
-                        <a href="/" class="logo">
-                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <path fill-rule="evenodd" clip-rule="evenodd" d="M2.5 15.75V5.5C2.5 4.94772 2.94772 4.5 3.5 4.5C3.74815 4.5 3.9752 4.59039 4.15 4.74004L11.0411 10.5618L20.9735 4.64966C21.1264 4.55478 21.3068 4.5 21.5 4.5C22.0523 4.5 22.5 4.94772 22.5 5.5V15.7363L22.5 15.75C22.5 17.3227 21.2899 18.6127 19.75 18.7397V18.75H5.5C3.84315 18.75 2.5 17.4069 2.5 15.75ZM4.5 7.65392L15.2668 16.75H5.5C4.94772 16.75 4.5 16.3023 4.5 15.75V7.65392ZM20.5 7.259L12.6573 11.9273L18.3659 16.75H19.5C20.0523 16.75 20.5 16.3023 20.5 15.75L20.5 7.259Z" fill="#2B2B2B"/>
-                            </svg>
-                            <span class="logo-text">Michael Klepacki</span>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="/portfolio/">Portfolio</a>
-                    </li>
-                    <li>
-                        <a href="/hobbies/">Hobbies</a>
-                    </li>
-                    <li>
-                        <a href="/all/">All</a>
-                    </li>
-                </ul>
+                <a href="/" class="logo">
+                    <span class="logo-text">Michael Klepacki</span>
+                </a>
+                <a href="/music/" class="link-music">
+                    Music
+                </a>
             </nav>
         </header>
         <!--
             PAGE
         -->
-        <main>
-            <div class="text-container">
-                <h1>Listening Room</h1>
-                <section id="heavy-rotation" class="flex-v">
-                    <h2>Heavy rotation</h2>
-                    <div class="wide-container">
-                        <ul class="grid grid-5">
-                            <li>
-                                <img src="/img/music/topsBuryTheKey.jpg" alt="Bury the Key, by TOPS" width="600" height="600">
-                            </li>
-                            <li>
-                                <img src="/img/music/dogueArianeRoy.jpg" alt="Dogue, by Ariane Roy" width="600" height="600">
-                            </li>
-                            <li>
-                                <img src="/img/music/toucheAmoreSpiralInAStraightLine.jpg" alt="Spiral in a Straight Line, by Touché Amoré" width="600" height="600">
-                            </li>
-                            <li>
-                                <img src="/img/music/clothPinkSilence.jpg" alt="Pink Silence, by Cloth" width="600" height="600">
-                            </li>
-                            <li>
-                                <img src="/img/music/phoenixAlphaZulu.jpg" alt="Alpha Zulu, by Phoenix" width="600" height="600">
-                            </li>
-                        </ul>
-                    </div>
-                </section>
-                <h2>Yearly favourites</h2>
-                <ul class="diary-sub-nav">
-                    <li><a href="#2025">2025</a></li>
-                </ul>
-                <section id="2026" class="flex-v flex-gap-xxl">
-                    <div class="flex-h-text flex-gap-s reading-section-header">
-                        <h2 class="flex-grow">2026 <a href="#2026" class="anchor-link">#</a></h2>
-                        <p class="color-secondary">2 books and counting…</p>
-                    </div>
-                    <div class="reading-container">
-                        <div class="book currently-reading">
-                            <div class="book-cover">
-                                <img src="/img/reading/hpPrisonerOfAzkaban.jpg" alt="Harry Potter and the Prisoner of Azkaban" width="150" height="225">
-                                <div class="binding"></div>
-                                <div class="light"></div>
-                            </div>
-                            <div class="book-pages"></div>
-                            <div class="bookmark"></div>
+        <main class="normal">
+            <header>
+                <h1>Favourite albums</h1>
+                <p class="lede">The gut-punchers. The roller coasters. The get-up-and-dancers. The tear-jerkers. The front-to-backers. The all-timers.</p>
+            </header>
+            <ul class="grid album-grid wide-container">
+                <li>
+                    <div class="album art-dark">
+                        <div class="disc-container">
+                            <div class="disc"></div>
                         </div>
-                        <div class="reading-info">
-                            <div class="book-details">
-                                <p class="book-title">Harry Potter and the Prisoner of Azkaban</p>
-                                <p class="book-author">J.K. Rowling 🤢</p>
-                            </div>
-                            <div class="book-review">
-                                <p class="book-rating"></p>
-                            </div>
-                            <p class="reading-dates"><span class="hidden">12 Jan 2026</span>currently reading…</p>
+                        <div class="album-art art-dark">
+                            <img src="/img/music/traumaRayCarnivalEP.jpg" alt="Carnival – EP, by trauma ray" width="600" height="600">
                         </div>
                     </div>
-                </section>
-            </div>
+                    <p><span class="font-weight-heading">Carnival – EP</span> <span class="color-secondary">(2026)</span><br>trauma ray</p>
+                </li>
+                <li>
+                    <div class="album">
+                        <div class="disc-container">
+                            <div class="disc"></div>
+                        </div>
+                        <div class="album-art art-dark">
+                            <img src="/img/music/topsBuryTheKey.jpg" alt="Bury the Key, by TOPS" width="600" height="600">
+                        </div>
+                    </div>
+                    <p><span class="font-weight-heading">Bury the Key</span> <span class="color-secondary">(2025)</span><br>TOPS</p>
+                </li>
+                <li>
+                    <div class="album">
+                        <div class="disc-container">
+                            <div class="disc"></div>
+                        </div>
+                        <div class="album-art art-dark">
+                            <img src="/img/music/toucheAmoreSpiralInAStraightLine.jpg" alt="Spiral in a Straight Line, by Touché Amoré" width="600" height="600">
+                        </div>
+                    </div>
+                    <p><span class="font-weight-heading">Spiral in a Straight Line</span> <span class="color-secondary">(2025)</span><br>Touché Amoré</p>
+                </li>
+                <li>
+                    <div class="album">
+                        <div class="disc-container">
+                            <div class="disc"></div>
+                        </div>
+                        <div class="album-art art-dark">
+                            <img src="/img/music/kinoMotelVisions.jpg" alt="Visions, by Kino Motel" width="600" height="600">
+                        </div>
+                    </div>
+                    <p><span class="font-weight-heading">Visions</span> <span class="color-secondary">(2024)</span><br>Kino Motel</p>
+                </li>
+                <li>
+                    <div class="album">
+                        <div class="disc-container">
+                            <div class="disc"></div>
+                        </div>
+                        <div class="album-art">
+                            <img src="/img/music/fayeWebsterUnderdressedAtTheSymphony.jpg" alt="Underdressed at the Symphony, by Faye Webster" width="600" height="600">
+                        </div>
+                    </div>
+                    <p><span class="font-weight-heading">Underdressed at the Symphony</span> <span class="color-secondary">(2024)</span><br>Faye Webster</p>
+                </li>
+                <li>
+                    <div class="album">
+                        <div class="disc-container">
+                            <div class="disc"></div>
+                        </div>
+                        <div class="album-art art-light">
+                            <img src="/img/music/paramoreThisIsWhy.jpg" alt="This Is Why, by Paramore" width="600" height="600">
+                        </div>
+                    </div>
+                    <p><span class="font-weight-heading">This Is Why</span> <span class="color-secondary">(2023)</span><br>Paramore</p>
+                </li>
+                <li>
+                    <div class="album">
+                        <div class="disc-container">
+                            <div class="disc"></div>
+                        </div>
+                        <div class="album-art">
+                            <img src="/img/music/marciMarci.jpg" alt="Marci, by Marci" width="600" height="600">
+                        </div>
+                    </div>
+                    <p><span class="font-weight-heading">Marci</span> <span class="color-secondary">(2022)</span><br>Marci</p>
+                </li>
+                <li>
+                    <div class="album">
+                        <div class="disc-container">
+                            <div class="disc"></div>
+                        </div>
+                        <div class="album-art art-dark">
+                            <img src="/img/music/deafheavenInfiniteGranite.jpg" alt="Infinite Granite, by Deafheaven" width="600"   height="600">
+                        </div>
+                    </div>
+                    <p><span class="font-weight-heading">Infinite Granite</span> <span class="color-secondary">(2021)</span><br>Deafheaven</p>
+                </li>
+                <li>
+                    <div class="album">
+                        <div class="disc-container">
+                            <div class="disc"></div>
+                        </div>
+                        <div class="album-art art-light">
+                            <img src="/img/music/fayeWebsterIKnowImFunnyHaha.jpg" alt="I Know I’m Funny haha, by Faye Webster" width="600" height="600">
+                        </div>
+                    </div>
+                    <p><span class="font-weight-heading">I Know I’m Funny haha</span> <span class="color-secondary">(2021)</span><br>Faye Webster</p>
+                </li>
+                <li>
+                    <div class="album">
+                        <div class="disc-container">
+                            <div class="disc"></div>
+                        </div>
+                        <div class="album-art">
+                            <img src="/img/music/laBelleVieBluettesEP.jpg" alt="Bluettes – EP, by La Belle Vie" width="600" height="600">
+                        </div>
+                    </div>
+                    <p><span class="font-weight-heading">Bluettes – EP</span> <span class="color-secondary">(2020)</span><br>La Belle Vie</p>
+                </li>
+                <li>
+                    <div class="album">
+                        <div class="disc-container">
+                            <div class="disc"></div>
+                        </div>
+                        <div class="album-art art-light">
+                            <img src="/img/music/fayeWebsterAtlantaMillionairesClub.jpg" alt="Atlanta Millionaires Club, by Faye Webster" width="600" height="600">
+                        </div>
+                    </div>
+                    <p><span class="font-weight-heading">Atlanta Millionaires Club</span> <span class="color-secondary">(2019)</span><br>Faye Webster</p>
+                </li>
+                <li>
+                    <div class="album">
+                        <div class="disc-container">
+                            <div class="disc"></div>
+                        </div>
+                        <div class="album-art art-light">
+                            <img src="/img/music/jungleForEver.jpg" alt="For Ever, by Jungle" width="600" height="600">
+                        </div>
+                    </div>
+                    <p><span class="font-weight-heading">For Ever</span> <span class="color-secondary">(2018)</span><br>Jungle</p>
+                </li>
+                <li>
+                    <div class="album">
+                        <div class="disc-container">
+                            <div class="disc"></div>
+                        </div>
+                        <div class="album-art art-light">
+                            <img src="/img/music/litany4TrackEP.jpg" alt="4 Track – EP, by Litany" width="600" height="600">
+                        </div>
+                    </div>
+                    <p><span class="font-weight-heading">4 Track – EP</span> <span class="color-secondary">(2017)</span><br>Litany</p>
+                </li>
+                <li>
+                    <div class="album">
+                        <div class="disc-container">
+                            <div class="disc"></div>
+                        </div>
+                        <div class="album-art art-light">
+                            <img src="/img/music/paramoreAfterLaughter.jpg" alt="After Laughter, by Paramore" width="600" height="600">
+                        </div>
+                    </div>
+                    <p><span class="font-weight-heading">After Laughter</span> <span class="color-secondary">(2017)</span><br>Paramore</p>
+                </li>
+                <li>
+                    <div class="album">
+                        <div class="disc-container">
+                            <div class="disc"></div>
+                        </div>
+                        <div class="album-art">
+                            <img src="/img/music/youngTheGiantYoungTheGiant.jpg" alt="Young the Giant, by Young the Giant" width="600" height="600">
+                        </div>
+                    </div>
+                    <p><span class="font-weight-heading">Young the Giant</span> <span class="color-secondary">(2010)</span><br>Young the Giant</p>
+                </li>
+                <li>
+                    <div class="album">
+                        <div class="disc-container">
+                            <div class="disc"></div>
+                        </div>
+                        <div class="album-art art-dark">
+                            <img src="/img/music/twoDoorCinemaClubTouristHistory.jpg" alt="Tourist History, by Two Door Cinema Club" width="600" height="600">
+                        </div>
+                    </div>
+                    <p><span class="font-weight-heading">Tourist History</span> <span class="color-secondary">(2010)</span><br>Two Door Cinema Club</p>
+                </li>
+                <li>
+                    <div class="album">
+                        <div class="disc-container">
+                            <div class="disc"></div>
+                        </div>
+                        <div class="album-art">
+                            <img src="/img/music/localNativesGorillaManor.jpg" alt="Gorilla Manor, by Local Natives" width="600" height="600">
+                        </div>
+                    </div>
+                    <p><span class="font-weight-heading">Gorilla Manor</span> <span class="color-secondary">(2010)</span><br>Local Natives</p>
+                </li>
+                <li>
+                    <div class="album">
+                        <div class="disc-container">
+                            <div class="disc"></div>
+                        </div>
+                        <div class="album-art art-light">
+                            <img src="/img/music/paramoreBrandNewEyes.jpg" alt="Brand New Eyes, by Paramore" width="600" height="600">
+                        </div>
+                    </div>
+                    <p><span class="font-weight-heading">Brand New Eyes</span> <span class="color-secondary">(2009)</span><br>Paramore</p>
+                </li>
+                <li>
+                    <div class="album">
+                        <div class="disc-container">
+                            <div class="disc"></div>
+                        </div>
+                        <div class="album-art">
+                            <img src="/img/music/fleetFoxesFleetFoxes.jpg" alt="Fleet Foxes, by Fleet Foxes" width="600" height="600">
+                            </div>
+                    </div>
+                    <p><span class="font-weight-heading">Fleet Foxes</span> <span class="color-secondary">(2008)</span><br>Fleet Foxes</p>
+                </li>
+                <li>
+                    <div class="album">
+                        <div class="disc-container">
+                            <div class="disc"></div>
+                        </div>
+                        <div class="album-art">
+                            <img src="/img/music/deathCabForCutieNarrowStairs.jpg" alt="Narrow Stairs, by Death Cab for Cutie" width="600" height="600">
+                        </div>
+                    </div>
+                    <p><span class="font-weight-heading">Narrow Stairs</span> <span class="color-secondary">(2008)</span><br>Death Cab for Cutie</p>
+                </li>
+                <li>
+                    <div class="album">
+                        <div class="disc-container">
+                            <div class="disc"></div>
+                        </div>
+                        <div class="album-art">
+                            <img src="/img/music/bonIverForEmmaForeverAgo.jpg" alt="For Emma, Forever Ago, by Bon Iver" width="600" height="600">
+                        </div>
+                    </div>
+                    <p><span class="font-weight-heading">For Emma, Forever Ago</span> <span class="color-secondary">(2008)</span><br>Bon Iver</p>
+                </li>
+                <li>
+                    <div class="album">
+                        <div class="disc-container">
+                            <div class="disc"></div>
+                        </div>
+                        <div class="album-art art-light">
+                            <img src="/img/music/chevelleVenaSera.jpg" alt="Vena Sera, by Chevelle" width="600" height="600">
+                        </div>
+                    </div>
+                    <p><span class="font-weight-heading">Vena Sera</span> <span class="color-secondary">(2007)</span><br>Chevelle</p>
+                </li>
+                <li>
+                    <div class="album">
+                        <div class="disc-container">
+                            <div class="disc"></div>
+                        </div>
+                        <div class="album-art">
+                            <img src="/img/music/fleetFoxesTheFleetFoxesEP.jpg" alt="The Fleet Foxes – EP, by Fleet Foxes" width="600" height="600">
+                        </div>
+                    </div>
+                    <p><span class="font-weight-heading">The Fleet Foxes – EP</span> <span class="color-secondary">(2006)</span><br>Fleet Foxes</p>
+                </li>
+                <li>
+                    <div class="album">
+                        <div class="disc-container">
+                            <div class="disc"></div>
+                        </div>
+                        <div class="album-art art-light">
+                            <img src="/img/music/afiDecemberunderground.jpg" alt="Decemberunderground, by AFI" width="600" height="600">
+                        </div>
+                    </div>
+                    <p><span class="font-weight-heading">December&shy;under&shy;ground</span> <span class="color-secondary">(2006)</span><br>AFI</p>
+                </li>
+                <li>
+                    <div class="album">
+                        <div class="disc-container">
+                            <div class="disc"></div>
+                        </div>
+                        <div class="album-art art-dark">
+                            <img src="/img/music/panicAtTheDiscoAFeverYouCantSweatOut.jpg" alt="A Fever You Can’t Sweat Out, by Panic! at the Disco" width="600" height="600">
+                        </div>
+                    </div>
+                    <p><span class="font-weight-heading">A Fever You Can’t Sweat Out</span> <span class="color-secondary">(2005)</span><br>Panic! at the Disco</p>
+                </li>
+                <li>
+                    <div class="album">
+                        <div class="disc-container">
+                            <div class="disc"></div>
+                        </div>
+                        <div class="album-art">
+                            <img src="/img/music/augustanaAllTheStarsAndBoulevards.jpg" alt="All the Stars and Boulevards, by Augustana" width="600" height="600">
+                        </div>
+                    </div>
+                    <p><span class="font-weight-heading">All the Stars and Boulevards</span> <span class="color-secondary">(2005)</span><br>Augustana</p>
+                </li>
+                <li>
+                    <div class="album">
+                        <div class="disc-container">
+                            <div class="disc"></div>
+                        </div>
+                        <div class="album-art art-light">
+                            <img src="/img/music/chevelleThisTypeOfThinking.jpg" alt="This Type of Thinking (Could Do Us In), by Chevelle" width="600" height="600">
+                        </div>
+                    </div>
+                    <p><span class="font-weight-heading">This Type of Thinking (Could Do Us In)</span> <span class="color-secondary">(2004)</span><br>Chevelle</p>
+                </li>
+                <li>
+                    <div class="album">
+                        <div class="disc-container">
+                            <div class="disc"></div>
+                        </div>
+                        <div class="album-art art-light">
+                            <img src="/img/music/deathCabForCutieTransatlanticism.jpg" alt="Transatlanticism, by Death Cab for Cutie" width="600" height="600">
+                        </div>
+                    </div>
+                    <p><span class="font-weight-heading">Transatlan&shy;ticism</span> <span class="color-secondary">(2003)</span><br>Death Cab for Cutie</p>
+                </li>
+                <li>
+                    <div class="album">
+                        <div class="disc-container">
+                            <div class="disc"></div>
+                        </div>
+                        <div class="album-art art-dark">
+                            <img src="/img/music/linkinParkMeteora.jpg" alt="Meteora, by Linkin Park" width="600" height="600">
+                        </div>
+                    </div>
+                    <p><span class="font-weight-heading">Meteora</span> <span class="color-secondary">(2003)</span><br>Linkin Park</p>
+                </li>
+                <li>
+                    <div class="album">
+                        <div class="disc-container">
+                            <div class="disc"></div>
+                        </div>
+                        <div class="album-art">
+                            <img src="/img/music/afiSingTheSorrow.jpg" alt="Sing the Sorrow, by AFI" width="600" height="600">
+                        </div>
+                    </div>
+                    <p><span class="font-weight-heading">Sing the Sorrow</span> <span class="color-secondary">(2003)</span><br>AFI</p>
+                </li>
+                <li>
+                    <div class="album">
+                        <div class="disc-container">
+                            <div class="disc"></div>
+                        </div>
+                        <div class="album-art art-dark">
+                            <img src="/img/music/chevelleWonderWhatsNext.jpg" alt="Wonder What’s Next, by Chevelle" width="600" height="600">
+                        </div>
+                    </div>
+                    <p><span class="font-weight-heading">Wonder What’s Next</span> <span class="color-secondary">(2002)</span><br>Chevelle</p>
+                </li>
+                <li>
+                    <div class="album">
+                        <div class="disc-container">
+                            <div class="disc"></div>
+                        </div>
+                        <div class="album-art">
+                            <img src="/img/music/deathCabForCutieTheForbiddenLoveEP.jpg" alt="The Forbidden Love EP, by Death Cab For Cutie" width="600" height="600">
+                        </div>
+                    </div>
+                    <p><span class="font-weight-heading">The Forbidden Love EP</span> <span class="color-secondary">(2000)</span><br>Death Cab For Cutie</p>
+                </li>
+                <li>
+                    <div class="album">
+                        <div class="disc-container">
+                            <div class="disc"></div>
+                        </div>
+                        <div class="album-art">
+                            <img src="/img/music/linkinParkHybridTheory.jpg" alt="Hybrid Theory, by Linkin Park" width="600" height="600">
+                        </div>
+                    </div>
+                    <p><span class="font-weight-heading">Hybrid Theory</span> <span class="color-secondary">(2000)</span><br>Linkin Park</p>
+                </li>
+                <li>
+                    <div class="album">
+                        <div class="disc-container">
+                            <div class="disc"></div>
+                        </div>
+                        <div class="album-art art-dark">
+                            <img src="/img/music/radioheadKidA.jpg" alt="Kid A, by Radiohead" width="600" height="600">
+                        </div>
+                    </div>
+                    <p><span class="font-weight-heading">Kid A</span> <span class="color-secondary">(2000)</span><br>Radiohead</p>
+                </li>
+                <li>
+                    <div class="album">
+                        <div class="disc-container">
+                            <div class="disc"></div>
+                        </div>
+                        <div class="album-art art-dark">
+                            <img src="/img/music/pinkFloydDarkSideOfTheMoon.jpg" alt="Dark Side of the Moon, by Pink Floyd" width="600" height="600">
+                        </div>
+                    </div>
+                    <p><span class="font-weight-heading">Dark Side of the Moon</span> <span class="color-secondary">(1973)</span><br>Pink Floyd</p>
+                </li>
+            </ul>
         </main>
         <!--
             FOOTER
@@ -117,10 +439,10 @@
                     <li><a href="mailto:michael.klepacki@me.com" title="Email" class="link-out" >Email</a></li>
                     <li><a href="https://mastodon.design/@kleypack" rel="me" title="Mastodon | @kleypack@mastodon.design" target="_blank" class="link-out" >Mastodon</a></li>
                     <li><a href="https://letterboxd.com/kleypack" title="Letterboxd | @kleypack" target="_blank" class="link-out">Letterboxd</a></li>
-                    <li><a href="https://literal.club/kleypack" title="Literal | @kleypack" target="_blank" class="link-out">Literal</a></li>
+                    <li><a href="https://michaelklepacki.com/rss/blog.xml" title="Musings | Michael Klepacki" class="link-out">RSS</a></li>
             </ul>
-            <div class="flex-h-text flex-gap-s">
-                <p class="flex-grow">&copy; 2025 Michael Klepacki. Built from scratch with love, sweat, & tears.</p>
+            <div class="flex-h flex-gap-s">
+                <p class="flex-grow">&copy; <script>document.write(new Date().getFullYear())</script> Michael Klepacki. Built from scratch with love, sweat, & tears.</p>
                 <p><a href="#top" class="back-to-top">Back to top</a></p>
             </div>
         </footer>

@@ -1,0 +1,7 @@
+<svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M14.1299 2C14.9583 2 15.6299 2.67157 15.6299 3.5V16.5C15.6299 17.3284 14.9583 18 14.1299 18H5.87988C5.05151 17.9999 4.37988 17.3284 4.37988 16.5V3.5C4.37988 2.67161 5.05151 2.00006 5.87988 2H14.1299ZM10.0049 11.5C8.83133 11.5001 7.87988 12.4514 7.87988 13.625C7.87988 14.7986 8.83133 15.7499 10.0049 15.75C11.1785 15.75 12.1299 14.7986 12.1299 13.625C12.1299 12.4514 11.1785 11.5 10.0049 11.5Z" fill="#F7F5F2" style="fill:#F7F5F2;fill:color(display-p3 0.9686 0.9608 0.9490);fill-opacity:1;"/>
+<rect x="4.38" y="2" width="11.25" height="16" rx="1.5" stroke="#2B2B2B" style="stroke:#2B2B2B;stroke:color(display-p3 0.1700 0.1700 0.1700);stroke-opacity:1;" stroke-width="1.25"/>
+<rect x="6.88" y="4.5" width="6.25" height="4.75" rx="0.5" fill="#C5C1BB" style="fill:#C5C1BB;fill:color(display-p3 0.7725 0.7569 0.7333);fill-opacity:1;"/>
+<rect x="6.88" y="4.5" width="6.25" height="4.75" rx="0.5" stroke="#2B2B2B" style="stroke:#2B2B2B;stroke:color(display-p3 0.1700 0.1700 0.1700);stroke-opacity:1;" stroke-width="1.25"/>
+<circle cx="10.005" cy="13.625" r="2.125" stroke="#2B2B2B" style="stroke:#2B2B2B;stroke:color(display-p3 0.1700 0.1700 0.1700);stroke-opacity:1;" stroke-width="1.25"/>
+</svg>

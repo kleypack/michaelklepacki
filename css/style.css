@@ -1388,26 +1388,36 @@ ul.grid {
 }
 
 .album,
-.album::before,
-.album::after {
+.disc-container {
     transition: 0.25s ease-in-out;
 }
 
-.album img {
-    border-radius: var(--border-radius-xxs);
-    box-shadow: 0px 4px 6px -3px var(--color-shadow-heavy);
+.album:hover {
+    transform: rotate(-4deg);
 }
 
-/* Record */
-.album::before {
-    content: '';
+.disc-container  {
     position: absolute;
     top: 2%;
     left: 2%;
-    z-index: -1;
     width: 96%;
     height: 96%;
     border-radius: var(--border-radius-round);
+    overflow: hidden;
+}
+
+.album:hover .disc-container {
+    left: 40%;
+    transform: rotate(20deg);
+}
+
+.disc {
+    position: relative;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    width: 100%;
+    height: 100%;
     background:
         radial-gradient(
             circle at 50%,
@@ -1416,92 +1426,216 @@ ul.grid {
             hsl(0 0 70) 2%,
             hsl(0 0 70) 22%,
             hsl(0 0 0) 22%,
+            hsl(0 0 0) 24%,
+            hsl(0 0 5) 24%,
+            hsl(0 0 5) 24.5%,
+            hsl(0 0 0) 24.5%,
+            hsl(0 0 0) 26%,
+            hsl(0 0 5) 26%,
+            hsl(0 0 5) 26.5%,
+            hsl(0 0 0) 26.5%,
+            hsl(0 0 0) 28%,
+            hsl(0 0 5) 28%,
+            hsl(0 0 5) 28.5%,
+            hsl(0 0 0) 28.5%,
             hsl(0 0 0) 30%,
             hsl(0 0 10) 30%,
+            hsl(0 0 10) 31.5%,
+            hsl(0 0 5) 31.5%,
+            hsl(0 0 5) 32%,
+            hsl(0 0 10) 32%,
+            hsl(0 0 10) 33.5%,
+            hsl(0 0 5) 33.5%,
+            hsl(0 0 5) 34%,
+            hsl(0 0 10) 34%,
+            hsl(0 0 10) 35.5%,
+            hsl(0 0 5) 35.5%,
+            hsl(0 0 5) 36%,
+            hsl(0 0 10) 36%,
+            hsl(0 0 10) 37.5%,
+            hsl(0 0 5) 37.5%,
+            hsl(0 0 5) 38%,
+            hsl(0 0 10) 38%,
             hsl(0 0 10) 39%,
             hsl(0 0 0) 39%,
             hsl(0 0 0) 40%,
             hsl(0 0 10) 40%,
+            hsl(0 0 10) 42%,
+            hsl(0 0 5) 42%,
+            hsl(0 0 5) 42.5%,
+            hsl(0 0 10) 42.5%,
+            hsl(0 0 10) 44%,
+            hsl(0 0 5) 44%,
+            hsl(0 0 5) 44.5%,
+            hsl(0 0 10) 44.5%,
+            hsl(0 0 10) 46%,
+            hsl(0 0 5) 46%,
+            hsl(0 0 5) 46.5%,
+            hsl(0 0 10) 46.5%,
+            hsl(0 0 10) 48%,
+            hsl(0 0 5) 48%,
+            hsl(0 0 5) 48.5%,
+            hsl(0 0 10) 48.5%,
             hsl(0 0 10) 50%,
             hsl(0 0 0) 50%,
             hsl(0 0 0) 51%,
             hsl(0 0 10) 51%,
+            hsl(0 0 10) 52.5%,
+            hsl(0 0 5) 52.5%,
+            hsl(0 0 5) 53%,
+            hsl(0 0 10) 53%,
+            hsl(0 0 10) 54.5%,
+            hsl(0 0 5) 54.5%,
+            hsl(0 0 5) 55%,
+            hsl(0 0 10) 55%,
+            hsl(0 0 10) 56.5%,
+            hsl(0 0 5) 56.5%,
+            hsl(0 0 5) 57%,
+            hsl(0 0 10) 57%,
+            hsl(0 0 10) 58.5%,
+            hsl(0 0 5) 58.5%,
+            hsl(0 0 5) 59%,
+            hsl(0 0 10) 59%,
             hsl(0 0 10) 60%,
             hsl(0 0 0) 60%,
             hsl(0 0 0) 61%,
             hsl(0 0 10) 61%,
+            hsl(0 0 10) 62.5%,
+            hsl(0 0 5) 62.5%,
+            hsl(0 0 5) 63%,
+            hsl(0 0 10) 63%,
+            hsl(0 0 10) 64.5%,
+            hsl(0 0 5) 64.5%,
+            hsl(0 0 5) 65%,
+            hsl(0 0 10) 65%,
+            hsl(0 0 10) 66.5%,
+            hsl(0 0 5) 66.5%,
+            hsl(0 0 5) 67%,
+            hsl(0 0 10) 67%,
             hsl(0 0 10) 68%,
             hsl(0 0 0) 68%,
+            hsl(0 0 0) 69%,
+            hsl(0 0 8) 69%,
+            hsl(0 0 8) 69.3%,
+            hsl(0 0 0) 69.3%,
+            hsl(0 0 0) 70%,
+            hsl(0 0 8) 70%,
+            hsl(0 0 8) 70.5%,
+            hsl(0 0 0) 70.5%,
             hsl(0 0 0) 100%);
 }
 
-@media (prefers-color-scheme: dark) {
-    .album::before {
-        background:
-            radial-gradient(
-                circle at 50%,
-                transparent 0%,
-                transparent 2%,
-                hsl(0 0 70) 2%,
-                hsl(0 0 70) 22%,
-                hsl(0 0 0) 22%,
-                hsl(0 0 0) 30%,
-                hsl(0 0 7) 30%,
-                hsl(0 0 7) 39%,
-                hsl(0 0 0) 39%,
-                hsl(0 0 0) 40%,
-                hsl(0 0 7) 40%,
-                hsl(0 0 7) 50%,
-                hsl(0 0 0) 50%,
-                hsl(0 0 0) 51%,
-                hsl(0 0 7) 51%,
-                hsl(0 0 7) 60%,
-                hsl(0 0 0) 60%,
-                hsl(0 0 0) 61%,
-                hsl(0 0 7) 61%,
-                hsl(0 0 7) 68%,
-                hsl(0 0 0) 68%,
-                hsl(0 0 0) 100%);
-    }
-}
-
-/* Glare */
-.album::after {
+/* Glare on Disc */
+.disc::after {
     content: "";
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
-    height: 50%;
+    height: 100%;
+    border-radius: var(--border-radius-round);
+    background:
+        conic-gradient(
+            from 150deg,
+            hsla(0 0 100 / 0%) 0deg,
+            hsla(0 0 100 / 0%) 45deg,
+            hsla(0 0 100 / 10%) 45deg,
+            hsla(0 0 100 / 10%) 90deg,
+            hsla(0 0 100 / 0%) 90deg,
+            hsla(0 0 100 / 0%) 225deg,
+            hsla(0 0 100 / 10%) 225deg,
+            hsla(0 0 100 / 10%) 270deg,
+            hsla(0 0 100 / 0%) 270deg);
+    -webkit-filter: blur(4px);
+    filter: blur(4px);
+}
+
+.album-art {
+    position: relative;
+    z-index: 1;
+    width: 100%;
+    height: 100%;
+    border-radius: var(--border-radius-xxs);
+    background-color: hsl(0 0 50);
+    overflow: hidden;
+    box-shadow:
+        0px 4px 6px -3px var(--color-shadow-heavy);
+}
+
+.album-art img {
+    border-radius: 0;
+    object-fit: cover;
+}
+
+/* Disc Wear */
+.album-art::before {
+    content: '';
+    position: absolute;
+    top: 2%;
+    left: 2%;
+    z-index: 2;
+    width: 96%;
+    height: 96%;
+    border: 1px solid hsla(0 0 100 / 10%);
+    border-radius: var(--border-radius-round);
+    background:
+        radial-gradient(
+            transparent 0%,
+            transparent 22%,
+            hsla(0 0 100 / 1%) 22%,
+            hsla(0 0 100 / 1%) 100%);
+    -webkit-filter: blur(2px);
+    filter: blur(2px);
+    -webkit-mix-blend-mode: linear-burn;
+    mix-blend-mode: linear-burn;
+    box-shadow: 0 0 0 60px hsla(0 0 0 / 8%);
+}
+
+.album-art.art-dark::before {
+    border: 1px solid hsla(0 0 100 / 6%);
+    -webkit-mix-blend-mode: difference;
+    mix-blend-mode: difference;
+    box-shadow: none;
+}
+
+.album-art.art-light::before {
+    border: 1px solid hsla(0 0 0 / 12%);
+    background-color: transparent;
+    background:
+    radial-gradient(
+        hsla(0 0 0 / 2%) 0%,
+        hsla(0 0 0 / 2%) 22%,
+        transparent 22%,
+        transparent 100%);
+    -webkit-mix-blend-mode: darken;
+    mix-blend-mode: darken;
+    box-shadow: 0 0 0 60px hsla(0 0 0 / 2%);
+}
+
+/* Glare on Album */
+.album-art::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
     border-radius: var(--border-radius-xxs);
     background:
         radial-gradient(
-            ellipse at 50% top,
-            hsla(0, 0%, 100%, 25%) 0%,
-            hsla(0, 0%, 100%, 15%) 40%,
-            hsla(0, 0%, 100%, 0%) 70%);
+            75% 75% at 50% top,
+            hsla(0 0 100 / 25%) 0%,
+            hsla(0 0 100 / 15%) 40%,
+            hsla(0 0 100 / 0%) 70%);
     -webkit-filter: blur(0.5px);
     filter: blur(0.5px);
-}
-
-.album:hover {
-    transform: rotate(-4deg);
-}
-
-/* Glare Hover */
-.album:hover::after {
-    left: 5%;
-    width: 95%;
-    height: 55%;
-}
-
-/* Record Hover */
-.album:hover::before {
-    left: 40%;
+    box-shadow:
+        inset 0 -1px 1px hsla(0 0 100 / 15%),
+        inset 0 1px 2px hsla(0 0 100 / 15%);
 }
 
 @media (prefers-reduced-motion: reduce) {
-    .album::before {
+    .disc-container {
         transition: 0.2s ease-out;
     }
 
@@ -1509,15 +1643,8 @@ ul.grid {
         transform: none;
     }
 
-    /* Glare Hover */
-    .album:hover::after {
-        left: 0;
-        width: 100%;
-        height: 50%;
-    }
-
     /* Record Hover */
-    .album:hover::before {
+    .album:hover .disc-container {
         left: 20%;
     }
 }
@@ -3133,14 +3260,8 @@ body.blog-entry {
         transform: none;
     }
 
-    .album:hover::before {
+    .album:hover .disc-container {
         left: 10%;
-    }
-
-    .album:hover::after {
-        left: 0;
-        width: 100%;
-        height: 50%;
     }
 
 	.logo:not(:only-child) .logo-text {
