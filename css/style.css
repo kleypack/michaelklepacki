@@ -198,7 +198,8 @@ q:before {
 	/* Color: Surface */
 	--color-surface-bg: color(display-p3 0.92205 0.90654 0.87773);
 	--color-surface-secondary: color(display-p3 0.64309 0.58683 0.40942 / 0.18);
-    --color-surface-edge-highlight: color(display-p3 1 1 1 / 0.6);
+    --color-surface-edge-highlight: color(display-p3 1 1 1 / 0.55);
+    --color-surface-edge-shadow: color(display-p3 0.18344 0.1138 0.0563 / 0.8);
 	--color-surface-scrim: color(display-p3 0.92105 0.90776 0.87915 / 0.6);
 
 	/* Color: Interactive */
@@ -311,6 +312,7 @@ q:before {
         --color-surface-bg: color(display-p3 0.12157 0.12157 0.118);
 		--color-surface-secondary: color(display-p3 0.30024 0.29413 0.27997 / 0.5);
         --color-surface-edge-highlight: color(display-p3 1 1 1 / 0.15);
+        --color-surface-edge-shadow: color(display-p3 0.03006 0.01879 0.00862 / 0.8);
 		--color-surface-scrim: color(display-p3 0.10176 0.10071 0.09826 / 0.6);
 
 		/* Color: Interactive */
@@ -1376,6 +1378,7 @@ ul.grid {
     display: flex;
     flex-direction: column;
     gap: var(--space);
+    margin-top: 0;
     margin-bottom: calc(-1 * (var(--space) + 2em));
 }
 
@@ -1584,7 +1587,9 @@ ul.grid {
     background:
         radial-gradient(
             transparent 0%,
-            transparent 22%,
+            transparent 20%,
+            hsla(0 0 100 / 4%) 20%,
+            hsla(0 0 100 / 4%) 22%,
             hsla(0 0 100 / 2%) 22%,
             hsla(0 0 100 / 2%) 100%);
     -webkit-filter: blur(2px);
@@ -1631,9 +1636,12 @@ ul.grid {
             hsla(0 0 100 / 0%) 70%);
     -webkit-filter: blur(0.5px);
     filter: blur(0.5px);
-    box-shadow:
+    /* box-shadow:
         inset 0 -1px 1px var(--color-surface-edge-highlight),
-        inset 0 1px 2px var(--color-surface-edge-highlight);
+        inset 0 1px 2px var(--color-surface-edge-highlight); */
+        box-shadow:
+        inset 0 1px 2px var(--color-surface-edge-highlight),
+        inset 0 -1px 1px var(--color-surface-edge-shadow);
 }
 
 @media (prefers-reduced-motion: reduce) {
