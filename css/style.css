@@ -3400,7 +3400,7 @@ body.blog-entry {
     .album-grid {
         grid-template-columns: repeat(1, minmax(0, 1fr));
         /* ↑ repeat(2) to return to 2-column-layout */
-        gap: var(--space) !important;
+        gap: var(--space-l) !important;
     }
 
     .track-grid {
@@ -3413,30 +3413,39 @@ body.blog-entry {
     .track-grid li {
         flex-direction: row;
         align-items: center;
-        padding-left: var(--space-s);
+        padding: 0 var(--space-s);
         /* ↑ delete to return to 2-column layout */
-        gap: var(--space-s);
+        gap: var(--space);
         margin-bottom: initial;
         overflow-wrap: break-word;
         hyphens: auto;
     }
 
     /* ↓ delete to return to 2-column layout */
+    .track-grid li {
+        gap: var(--space-s);
+    }
+
+    .album-grid li p {
+        padding: 0;
+    }
+
+    /* ↓ delete to return to 2-column layout */
     .album {
-        min-width: 50%;
-        max-width: 50%;
+        min-width: calc(50% - var(--space-s));
+        max-width: calc(50% - var(--space-s));
     }
 
     .track-grid .album {
-        min-width: 29%;
-        max-width: 29%;
+        min-width: calc(29% - var(--space-s));
+        max-width: calc(29% - var(--space-s));
     }
 
-    /* .album:hover {
-        transform: none;
+    .album:hover {
+        transform: rotate(-2deg);
     }
 
-    .album:hover .disc-container {
+    /* .album:hover .disc-container {
         left: 10%;
     } */
 
