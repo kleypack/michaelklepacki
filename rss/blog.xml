@@ -1,12 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:dc="http://purl.org/dc/elements/1.1/">
     <channel>
         <title>Musings</title>
         <link>https://michaelklepacki.com/</link>
         <description>Or, more likely, ramblings. By Michael Klepacki.</description>
-        <language>en-us</language>
+        <language>en</language>
         <atom:link href="https://michaelklepacki.com/rss/blog.xml" rel="self" type="application/rss+xml" />
         <copyright>Copyright 2026 Michael Klepacki.</copyright>
+        <docs>https://www.rssboard.org/rss-specification</docs>
 
         <item>
             <title>10 March 2026 at 00:17 CET</title>

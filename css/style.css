@@ -392,6 +392,7 @@ html {
 	width: 100vw;
 	background: var(--color-surface-bg);
 	font-size: 62.5%; /* 1rem = 10px */
+    -webkit-font-smoothing: antialiased;
 	scroll-behavior: smooth;
 }
 
@@ -1368,21 +1369,39 @@ ul.grid {
 	grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
 }
 
+.album-grid,
+.track-grid {
+    margin: var(--space-xxl) 0 !important;
+}
+
 .album-grid {
     grid-template-columns: repeat(3, 1fr);
-    row-gap: var(--space-4xl) !important;
+    row-gap: var(--space-xxl) !important;
     column-gap: 12% !important;
 }
 
-.album-grid li {
+.track-grid {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    row-gap: var(--space-l) !important;
+    column-gap: 9% !important;
+}
+
+.album-grid li,
+.track-grid li {
     display: flex;
     flex-direction: column;
     gap: var(--space);
+    height: fit-content;
     margin-top: 0;
-    margin-bottom: calc(-1 * (var(--space) + 2em));
+    /* margin-bottom: calc(-1 * (var(--space) + 2em)); */
 }
 
-.album-grid li p {
+.track-grid li {
+    gap: var(--space-s);
+}
+
+.album-grid li p,
+.track-grid li p {
     padding: 0 var(--space-xs);
 }
 
@@ -1390,7 +1409,7 @@ ul.grid {
     position: relative;
     z-index: 1;
     border-radius: var(--border-radius-xxs);
-    background-color: hsl(0 0 50);
+    background-color: hsl(0 0 80);
 }
 
 .album,
@@ -1410,11 +1429,16 @@ ul.grid {
     height: 96%;
     border-radius: var(--border-radius-round);
     overflow: hidden;
+    box-shadow: 0 2px 4px -1px var(--color-shadow-heavy);
 }
 
 .album:hover .disc-container {
     left: 40%;
     transform: rotate(20deg);
+}
+
+.track-grid .album:hover .disc-container {
+    left: 30%;
 }
 
 .disc {
@@ -1531,6 +1555,80 @@ ul.grid {
             hsl(0 0 0) 100%);
 }
 
+.track-grid .disc {
+    position: relative;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    width: 100%;
+    height: 100%;
+    background:
+        radial-gradient(
+            circle at 50%,
+            transparent 0%,
+            transparent 20%,
+            hsl(0 0 70) 20%,
+            hsl(0 0 70) 38%,
+            hsl(0 0 0) 38%,
+            hsl(0 0 0) 40%,
+            hsl(0 0 5) 40%,
+            hsl(0 0 5) 40.5%,
+            hsl(0 0 0) 40.5%,
+            hsl(0 0 0) 42.5%,
+            hsl(0 0 5) 42.5%,
+            hsl(0 0 5) 43%,
+            hsl(0 0 0) 43%,
+            hsl(0 0 0) 45%,
+            hsl(0 0 5) 45%,
+            hsl(0 0 5) 45.5%,
+            hsl(0 0 0) 45.5%,
+            hsl(0 0 0) 48%,
+            hsl(0 0 10) 48%,
+            hsl(0 0 10) 49.5%,
+            hsl(0 0 5) 49.5%,
+            hsl(0 0 5) 50%,
+            hsl(0 0 10) 50%,
+            hsl(0 0 10) 51.5%,
+            hsl(0 0 5) 51.5%,
+            hsl(0 0 5) 52%,
+            hsl(0 0 10) 52%,
+            hsl(0 0 10) 53.5%,
+            hsl(0 0 5) 53.5%,
+            hsl(0 0 5) 54%,
+            hsl(0 0 10) 54%,
+            hsl(0 0 10) 55.5%,
+            hsl(0 0 5) 55.5%,
+            hsl(0 0 5) 56%,
+            hsl(0 0 10) 56%,
+            hsl(0 0 10) 57.5%,
+            hsl(0 0 5) 57.5%,
+            hsl(0 0 5) 58%,
+            hsl(0 0 10) 58%,
+            hsl(0 0 10) 59.5%,
+            hsl(0 0 5) 59.5%,
+            hsl(0 0 5) 60%,
+            hsl(0 0 10) 60%,
+            hsl(0 0 10) 61.5%,
+            hsl(0 0 5) 61.5%,
+            hsl(0 0 5) 62%,
+            hsl(0 0 10) 62%,
+            hsl(0 0 10) 63.5%,
+            hsl(0 0 5) 63.5%,
+            hsl(0 0 5) 64%,
+            hsl(0 0 10) 64%,
+            hsl(0 0 10) 66%,
+            hsl(0 0 0) 66%,
+            hsl(0 0 0) 67%,
+            hsl(0 0 5) 67%,
+            hsl(0 0 5) 67.5%,
+            hsl(0 0 0) 67.5%,
+            hsl(0 0 0) 68.5%,
+            hsl(0 0 5) 68.5%,
+            hsl(0 0 5) 69%,
+            hsl(0 0 0) 69%,
+            hsl(0 0 0) 100%);
+}
+
 /* Glare on Disc */
 .disc::after {
     content: "";
@@ -1545,12 +1643,12 @@ ul.grid {
             from 150deg,
             hsla(0 0 100 / 0%) 0deg,
             hsla(0 0 100 / 0%) 45deg,
-            hsla(0 0 100 / 10%) 45deg,
-            hsla(0 0 100 / 10%) 90deg,
+            hsla(0 0 100 / 20%) 45deg,
+            hsla(0 0 100 / 20%) 90deg,
             hsla(0 0 100 / 0%) 90deg,
             hsla(0 0 100 / 0%) 225deg,
-            hsla(0 0 100 / 10%) 225deg,
-            hsla(0 0 100 / 10%) 270deg,
+            hsla(0 0 100 / 20%) 225deg,
+            hsla(0 0 100 / 20%) 270deg,
             hsla(0 0 100 / 0%) 270deg);
     -webkit-filter: blur(4px);
     filter: blur(4px);
@@ -1566,6 +1664,25 @@ ul.grid {
     overflow: hidden;
     box-shadow:
         0px 4px 6px -3px var(--color-shadow-heavy);
+}
+
+.album-art-cutout {
+    aspect-ratio: 1 / 1;
+    background:
+        radial-gradient(
+            circle at 50%,
+            transparent 0%,
+            transparent 37%,
+            hsl(0 0 90) 37%,
+            hsl(0 0 90) 100%);
+}
+
+.disc-label {
+    position: absolute;
+    left: 22.5%;
+    top: 22.5%;
+    width: 55%;
+    height: 55%;
 }
 
 .album-art img {
@@ -1599,6 +1716,17 @@ ul.grid {
     box-shadow: 0 0 0 60px hsla(0 0 0 / 5%);
 }
 
+.track-grid .album-art::before {
+    background:
+    radial-gradient(
+        transparent 0%,
+        transparent 36%,
+        hsla(0 0 100 / 4%) 36%,
+        hsla(0 0 100 / 4%) 37%,
+        hsla(0 0 100 / 2%) 37%,
+        hsla(0 0 100 / 2%) 100%);
+}
+
 .album-art.art-dark::before {
     border: 1px solid hsla(0 0 100 / 6%);
     -webkit-mix-blend-mode: difference;
@@ -1617,6 +1745,16 @@ ul.grid {
     -webkit-mix-blend-mode: darken;
     mix-blend-mode: darken;
     box-shadow: 0 0 0 60px hsla(0 0 0 / 1%);
+}
+
+.track-grid .album-art.art-light::before {
+    background:
+        radial-gradient(
+            hsla(0 0 0 / 1%) 0%,
+            hsla(0 0 0 / 1%) 37%,
+            transparent 37%,
+            transparent 100%);
+    /* box-shadow: 0 0 0 60px hsla(0 0 0 / 1%); */
 }
 
 /* Glare on Album */
@@ -1639,9 +1777,14 @@ ul.grid {
     /* box-shadow:
         inset 0 -1px 1px var(--color-surface-edge-highlight),
         inset 0 1px 2px var(--color-surface-edge-highlight); */
-        box-shadow:
+    box-shadow:
         inset 0 1px 2px var(--color-surface-edge-highlight),
         inset 0 -1px 1px var(--color-surface-edge-shadow);
+}
+
+.track-grid .album-art::after {
+    box-shadow:
+        none;
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -3255,24 +3398,46 @@ body.blog-entry {
 	}
 
     .album-grid {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
+        grid-template-columns: repeat(1, minmax(0, 1fr));
+        /* ↑ repeat(2) to return to 2-column-layout */
         gap: var(--space) !important;
     }
 
-    .album-grid li {
+    .track-grid {
+        grid-template-columns: repeat(1, minmax(0, 1fr));
+        /* ↑ repeat(3) to return to 2-column-layout */
+        gap: var(--space) !important;
+    }
+
+    .album-grid li,
+    .track-grid li {
+        flex-direction: row;
+        align-items: center;
+        /* ↑ delete to return to 2-column layout */
         gap: var(--space-s);
         margin-bottom: initial;
         overflow-wrap: break-word;
         hyphens: auto;
     }
 
-    .album:hover {
+    /* ↓ delete to return to 2-column layout */
+    .album {
+        min-width: 50%;
+        max-width: 50%;
+    }
+
+    .track-grid .album {
+        min-width: 29%;
+        max-width: 29%;
+    }
+
+    /* .album:hover {
         transform: none;
     }
 
     .album:hover .disc-container {
         left: 10%;
-    }
+    } */
 
 	.logo:not(:only-child) .logo-text {
 		display: none;
