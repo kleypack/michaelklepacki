@@ -3413,6 +3413,7 @@ body.blog-entry {
     .track-grid li {
         flex-direction: row;
         align-items: center;
+        padding-left: var(--space-s);
         /* ↑ delete to return to 2-column layout */
         gap: var(--space-s);
         margin-bottom: initial;
