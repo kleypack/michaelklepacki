@@ -393,6 +393,7 @@ html {
 	background: var(--color-surface-bg);
 	font-size: 62.5%; /* 1rem = 10px */
     -webkit-font-smoothing: antialiased;
+    scrollbar-gutter: stable;
 	scroll-behavior: smooth;
 }
 
@@ -909,7 +910,7 @@ a.button:focus {
 .link-out::after {
 	content: "\2197"; /* ↗︎ */
 	display: inline-block;
-	margin-left: .3em;
+	margin-left: 0.3em;
 	color: var(--color-text-secondary);
 	text-decoration: none;
 }
@@ -919,6 +920,20 @@ a.button:focus {
     display: inline-block;
     margin-left: 0.3em;
     color: var(--color-text-secondary);
+}
+
+.back-to-blog {
+    margin-top: var(--space-l);
+    font-family: var(--font-family);
+    font-size: 1.4rem;
+    color: var(--color-text-secondary);
+}
+
+.back-to-blog::before {
+    content: '← ';
+    display: inline-block;
+    margin-right: 0.3em;
+    text-decoration: none;
 }
 
 ul.icon-links {
@@ -1408,6 +1423,7 @@ ul.grid {
 .album {
     position: relative;
     z-index: 1;
+    /* outline: 0.5px solid hsla(0 0 0 / 10%); */
     border-radius: var(--border-radius-xxs);
     background-color: hsl(0 0 80);
 }
@@ -1690,6 +1706,49 @@ ul.grid {
     object-fit: cover;
 }
 
+.album-art-becauseTheInternet {
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    background-size: cover;
+    animation: becauseTheInternet-unblur 0.25s ease;
+    animation-fill-mode: forwards;
+}
+
+.album-art-becauseTheInternet:hover {
+    animation: becauseTheInternet-blur 0.25s ease;
+    animation-fill-mode: forwards;
+}
+
+@keyframes becauseTheInternet-unblur {
+    25% {
+        background-image: url(/img/music/childishGambinoBecauseTheInternet-4.jpg);
+    }
+    50% {
+        background-image: url(/img/music/childishGambinoBecauseTheInternet-3.jpg);
+    }
+    75% {
+        background-image: url(/img/music/childishGambinoBecauseTheInternet-2.jpg);
+    }
+    100% {
+        background-image: url(/img/music/childishGambinoBecauseTheInternet.jpg);
+    }
+}
+
+@keyframes becauseTheInternet-blur {
+    25% {
+        background-image: url(/img/music/childishGambinoBecauseTheInternet.jpg);
+    }
+    50% {
+        background-image: url(/img/music/childishGambinoBecauseTheInternet-2.jpg);
+    }
+    75% {
+        background-image: url(/img/music/childishGambinoBecauseTheInternet-3.jpg);
+    }
+    100% {
+        background-image: url(/img/music/childishGambinoBecauseTheInternet-4.jpg);
+    }
+}
+
 /* Disc Wear */
 .album-art::before {
     content: '';
@@ -1935,7 +1994,8 @@ ul.grid {
 nav:not(.blog-nav) {
 	position: fixed;
 	top: 16px;
-	left: 50%;
+    /* ↓ offset for scrollbar width */
+	left: calc(50% + var(--space-s));
 	transform: translateX(-50%);
 	z-index: 99;
 	display: flex;
@@ -3041,17 +3101,6 @@ body.blog-entry {
 	color: var(--color-text-secondary) !important;
 }
 
-.back-to-blog {
-	margin-top: var(--space-l);
-	font-family: var(--font-family);
-	font-size: 1.4rem;
-	color: var(--color-text-secondary);
-}
-
-.back-to-blog::before {
-    content: '← ';
-}
-
 .blog-entry main {
 	display: flex;
 	justify-content: center;
@@ -3452,6 +3501,10 @@ body.blog-entry {
 	.logo:not(:only-child) .logo-text {
 		display: none;
 	}
+
+    nav:not(.blog-nav) {
+        left: 50%;
+    }
 
 	/* Middle elements */
 	nav a:not(:first-child):not(:last-child) {
