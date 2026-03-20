@@ -1401,6 +1401,12 @@ ul.grid {
     column-gap: 9% !important;
 }
 
+.album-grid a:hover,
+.track-grid a:hover {
+    background-color: transparent;
+    box-shadow: none;
+}
+
 .album-grid li,
 .track-grid li {
     display: flex;
