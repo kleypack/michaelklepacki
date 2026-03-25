@@ -1387,6 +1387,7 @@ ul.grid {
 .album-grid,
 .track-grid {
     margin: var(--space-xxl) 0 !important;
+    font-variant-numeric: lining-nums;
 }
 
 .album-grid {
@@ -2235,13 +2236,12 @@ nav:not(.blog-nav) {
 	background-image: url("/icons/24/app-icon-light-24.svg");
 }
 
-.home-nav .listening::before {
-	-webkit-mask-image: url("/icons/homeNav/speaker-hifi.svg");
-	mask-image: url("/icons/homeNav/speaker-hifi.svg");
+.home-nav .music::before {
+	background-image: url("/icons/24/ipod-light-24.svg");
 }
 
 .home-nav .media-log::before {
-	background-image: url("/icons/24/notebook-light-24.svg");
+	background-image: url("/icons/24/calendar-heart-light-24.svg");
 }
 
 .home-nav .papa::before {
@@ -3325,8 +3325,12 @@ body.blog-entry {
 	}
 
 	.home-nav .media-log::before {
-		background-image: url("/icons/24/notebook-dark-24.svg");
+		background-image: url("/icons/24/calendar-heart-dark-24.svg");
 	}
+
+    .home-nav .music::before {
+        background-image: url("/icons/24/ipod-dark-24.svg");
+    }
 
 	.home-nav .papa::before {
 		background-image: url("/icons/24/flower-tulip-dark-24.svg");
@@ -3491,9 +3495,15 @@ body.blog-entry {
         max-width: calc(50% - var(--space-s));
     }
 
-    .track-grid .album {
+    .track-grid .album,
+    .track-grid a {
         min-width: calc(29% - var(--space-s));
         max-width: calc(29% - var(--space-s));
+    }
+
+    .track-grid a .album {
+        min-width: 100%;
+        max-width: 100%;
     }
 
     .album:hover {
