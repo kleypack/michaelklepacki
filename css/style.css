@@ -922,6 +922,20 @@ a.button:focus {
     color: var(--color-text-secondary);
 }
 
+.link-goto-down::after {
+    content: '↓'; /* → */
+    display: inline-block;
+    margin-left: 0.3em;
+    color: var(--color-text-secondary);
+}
+
+.link-goto-up::after {
+    content: '↑'; /* → */
+    display: inline-block;
+    margin-left: 0.3em;
+    color: var(--color-text-secondary);
+}
+
 .back-to-blog {
     margin-top: var(--space-l);
     font-family: var(--font-family);
@@ -1876,39 +1890,43 @@ ul.grid {
 
 .ipod {
     display: flex;
-    flex-direction: column-reverse;
-    margin-top: var(--space);
+    flex-direction: column;
+    margin-top: var(--space-xl);
     margin-bottom: var(--space-l);
     width: 320px;
     max-width: 100%;
     height: 240px;
     background: #F5F5F5;
-    border: 6px black solid;
+    border: 4px black solid;
     border-radius: var(--border-radius-xxs);
     color: #0A0A0A;
     /* box-shadow: 0 0 0 14px #030D10; */
     font-family: 'Helvetica', var(--font-family);
+    font-size: 1.5rem;
     font-weight: var(--font-weight-heading);
     letter-spacing: -0.02em;
 }
 
 .ipod-header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     margin: 0 !important;
     width: 100%;
+    min-height: 10%;
     height: 10%;
-    padding-top: 1px;
-    background: linear-gradient(#EDF2EE, #B5C7C8);
+    background: linear-gradient(#EDEFF2, #B5BFC8);
     font-family: 'Helvetica', var(--font-family);
-    font-size: 1.6rem;
+    font-size: 1.5rem;
     text-align: center;
-    box-shadow: 0 1px 0 #98A4A4;
+    /* box-shadow: 0 1px 0 #98A4A4; */
 }
 
 @supports selector(::-webkit-scrollbar) {
 
     .ipod-list-view {
         scrollbar-width: thin !important;
-        scrollbar-color: #49A9D9 #C6D4D4 !important;
+        scrollbar-color: #49A9D9 #C6CCD4 !important;
     }
 
     .ipod-list-view::-webkit-scrollbar {
@@ -1916,7 +1934,7 @@ ul.grid {
     }
 
     .ipod-list-view::-webkit-scrollbar-track {
-        background-color: #C6D4D4;
+        background-color: #C6CCD4;
         box-shadow: inset 1px 0px 4px var(--color-shadow-weak);
     }
 
@@ -1939,9 +1957,10 @@ ul.grid {
     padding: 0;
     list-style-type: none;
     font-weight: var(--font-weight-heading);
+    box-shadow: 0 -1px 0 #98A4A4;
     overflow-y: scroll;
     scrollbar-width: thin !important;
-    scrollbar-color: #49A9D9 #C6D4D4 !important;
+    scrollbar-color: #49A9D9 #C6CCD4 !important;
     scrollbar-gutter: auto;
 }
 
