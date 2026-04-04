@@ -2479,12 +2479,13 @@ a.active-anchor {
 }
 
 .blog-nav span {
-    margin-bottom: var(--space);
 	color: var(--color-text-secondary);
 }
 
 .blog-nav ol {
-	margin-bottom: var(--space-xl);
+    /* compensate font-size difference to align to baseline */
+    margin-top: calc(var(--space) + 0.2rem);
+    margin-bottom: var(--space-xl);
 	list-style-type: none;
 }
 
@@ -2495,6 +2496,10 @@ a.active-anchor {
 .blog-nav a:hover {
 	background-color: var(--color-surface-secondary);
 	box-shadow: 0 0 0 4px var(--color-surface-secondary);
+}
+
+.blog-nav.mobile a:not(.blog-back-to-top) {
+    text-wrap: nowrap;
 }
 
 
