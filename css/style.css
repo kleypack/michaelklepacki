@@ -1868,6 +1868,131 @@ ul.grid {
     }
 }
 
+.ipod-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.ipod {
+    display: flex;
+    flex-direction: column-reverse;
+    margin-top: var(--space);
+    margin-bottom: var(--space-l);
+    width: 320px;
+    max-width: 100%;
+    height: 240px;
+    background: #F5F5F5;
+    border: 6px black solid;
+    border-radius: var(--border-radius-xxs);
+    color: #0A0A0A;
+    /* box-shadow: 0 0 0 14px #030D10; */
+    font-family: 'Helvetica', var(--font-family);
+    font-weight: var(--font-weight-heading);
+    letter-spacing: -0.02em;
+}
+
+.ipod-header {
+    margin: 0 !important;
+    width: 100%;
+    height: 10%;
+    padding-top: 1px;
+    background: linear-gradient(#EDF2EE, #B5C7C8);
+    font-family: 'Helvetica', var(--font-family);
+    font-size: 1.6rem;
+    text-align: center;
+    box-shadow: 0 1px 0 #98A4A4;
+}
+
+@supports selector(::-webkit-scrollbar) {
+
+    .ipod-list-view {
+        scrollbar-width: thin !important;
+        scrollbar-color: #49A9D9 #C6D4D4 !important;
+    }
+
+    .ipod-list-view::-webkit-scrollbar {
+        width: var(--space-s);
+    }
+
+    .ipod-list-view::-webkit-scrollbar-track {
+        background-color: #C6D4D4;
+        box-shadow: inset 1px 0px 4px var(--color-shadow-weak);
+    }
+
+    .ipod-list-view::-webkit-scrollbar-thumb {
+        border-radius: 0;
+        border: none;
+        background-color: #49A9D9;
+        -webkit-transition: none;
+        transition: none;
+    }
+
+    *::-webkit-scrollbar-thumb:hover {
+        background-color: var(--color-scrollbar-hover);
+    }
+
+}
+
+.ipod-list-view {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+    font-weight: var(--font-weight-heading);
+    overflow-y: scroll;
+    scrollbar-width: thin !important;
+    scrollbar-color: #49A9D9 #C6D4D4 !important;
+    scrollbar-gutter: auto;
+}
+
+.ipod-list-view li {
+    margin-top: 0 !important;
+    width: 100%;
+    height: 11.11111%;
+    border-right: 1px solid #98A4A4;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.ipod-list-view a {
+    display: inline-block;
+    width: 100%;
+    padding-left: var(--space-xs);
+    padding-top: 1px;
+    padding-bottom: 1px;
+    color: inherit;
+    text-decoration: none;
+    transition: none;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.ipod-list-view a:hover {
+    background: transparent;
+    box-shadow: none;
+}
+
+.ipod-list-view a:active,
+.ipod-list-view a:focus {
+    border-radius: 0;
+    background: linear-gradient(#1683E7, #0558D1);
+    color: white;
+    box-shadow:
+        0 1px 0 #0A66D2,
+        0 -1px 0 #0A66D2;
+    outline: none;
+}
+
+.ipod-list-view li:hover {
+    background: linear-gradient(#1683E7, #0558D1);
+    color: white;
+    box-shadow:
+        0 1px 0 #0A66D2,
+        0 -1px 0 #0A66D2;
+}
+
 .chat-container {
 	margin: 1em 0;
 }
