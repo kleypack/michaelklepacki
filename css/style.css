@@ -3188,6 +3188,7 @@ body.blog-entry {
 
 .blog h1 {
 	font-family: var(--font-family-heading-serif);
+    font-weight: 900;
 	letter-spacing: 0.01em;
 }
 
