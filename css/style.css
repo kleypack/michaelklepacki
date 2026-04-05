@@ -1205,21 +1205,17 @@ img {
 }
 
 .gallery img {
-	display: inline-block;
+    display: inline-block;
 	height: 100%;
 	max-height: 60vh;
 	width: auto;
 	margin: var(--space);
+    outline: 1px solid hsla(0 0 100 / 8%);
+    outline-offset: -1px;
 	border-radius: var(--border-radius-s);
-	box-shadow:
-		0 22px 16px -18px var(--color-shadow-heavy);
+	box-shadow: 0 22px 16px -18px var(--color-shadow-heavy);
 	transition: 0.2s;
 }
-
-/* .gallery img:hover {
-	transform: scale(101%);
-	box-shadow: 0 24px 18px -22px var(--color-shadow-heavy);
-} */
 
 .month {
 	display: inline-block;
@@ -2268,6 +2264,10 @@ nav:not(.blog-nav) {
 
 .link-gaming::before {
 	background-image: url("/icons/20/game-controller-light-20.svg");
+}
+
+.link-games-control::before {
+    background-image: url("/icons/20/games-control-light-20.svg");
 }
 
 .link-icons::before {
@@ -3393,6 +3393,10 @@ body.blog-entry {
 	.link-gaming::before {
 		background-image: url("/icons/20/game-controller-dark-20.svg");
 	}
+
+    .link-games-control::before {
+        background-image: url("/icons/20/games-control-dark-20.svg");
+    }
 
 	.link-icons::before {
 		background-image: url("/icons/20/app-icon-dark-20.svg");
