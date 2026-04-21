@@ -3192,6 +3192,11 @@ body.blog-entry {
 	letter-spacing: 0.01em;
 }
 
+.blog p,
+.blog-entry p {
+    hyphens: auto;
+}
+
 .blog .lede {
 	color: var(--color-text-secondary);
 	font-family: var(--font-family-serif);
