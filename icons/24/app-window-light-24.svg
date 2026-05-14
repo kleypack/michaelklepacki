@@ -1,7 +1,0 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
-  <rect width="19" height="14.5" x="2.5" y="4.75" fill="#f7f5f2" rx="1" style="fill:#F7F5F2;fill:color(display-p3 0.9686 0.9608 0.9490);fill-opacity:1"/>
-  <path fill="#2b2b2b" d="M20.5 5.75a.25.25 0 0 0-.25-.25H3.75a.25.25 0 0 0-.25.25v12.5c0 .138.112.25.25.25h16.5a.25.25 0 0 0 .25-.25zm1.5 12.5A1.75 1.75 0 0 1 20.25 20H3.75A1.75 1.75 0 0 1 2 18.25V5.75C2 4.784 2.784 4 3.75 4h16.5c.966 0 1.75.784 1.75 1.75z" style="fill:#2B2B2B;fill:color(display-p3 0.1700 0.1700 0.1700);fill-opacity:1"/>
-  <path fill="#768d21" d="M15.5 8.25a1.25 1.25 0 1 1-2.5 0 1.25 1.25 0 0 1 2.5 0" style="fill:#768D21;fill:color(display-p3 0.4627 0.5529 0.1294);fill-opacity:1"/>
-  <path fill="#be9207" d="M11.5 8.25a1.25 1.25 0 1 1-2.5 0 1.25 1.25 0 0 1 2.5 0" style="fill:#BE9207;fill:color(display-p3 0.7451 0.5725 0.0275);fill-opacity:1"/>
-  <path fill="#d14d41" d="M7.5 8.25a1.25 1.25 0 1 1-2.5 0 1.25 1.25 0 0 1 2.5 0" style="fill:#D14D41;fill:color(display-p3 0.8196 0.3020 0.2549);fill-opacity:1"/>
-</svg>

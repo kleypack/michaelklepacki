@@ -1,6 +1,0 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
-  <path fill="#abcfe2" d="M16.5 3h-9A4.5 4.5 0 0 0 3 7.5v9A4.5 4.5 0 0 0 7.5 21h9a4.5 4.5 0 0 0 4.5-4.5v-9A4.5 4.5 0 0 0 16.5 3M12 15.75a3.75 3.75 0 1 1 0-7.5 3.75 3.75 0 0 1 0 7.5" style="fill:#ABCFE2;fill:color(display-p3 0.6706 0.8118 0.8863);fill-opacity:1"/>
-  <path fill="#f1d67e" d="M12 15.75a3.75 3.75 0 1 0 0-7.5 3.75 3.75 0 0 0 0 7.5" style="fill:#F1D67E;fill:color(display-p3 0.9451 0.8392 0.4941);fill-opacity:1"/>
-  <path fill="#2b2b2b" d="M20.25 7.5a3.75 3.75 0 0 0-3.75-3.75h-9A3.75 3.75 0 0 0 3.75 7.5v9a3.75 3.75 0 0 0 3.75 3.75h9a3.75 3.75 0 0 0 3.75-3.75zm1.5 9c0 2.9-2.35 5.25-5.25 5.25h-9a5.25 5.25 0 0 1-5.25-5.25v-9c0-2.9 2.35-5.25 5.25-5.25h9c2.9 0 5.25 2.35 5.25 5.25z" style="fill:#2B2B2B;fill:color(display-p3 0.1700 0.1700 0.1700);fill-opacity:1"/>
-  <path fill="#2b2b2b" d="M15 12a3 3 0 1 0-6 0 3 3 0 0 0 6 0m1.5 0a4.5 4.5 0 1 1-9 0 4.5 4.5 0 0 1 9 0" style="fill:#2B2B2B;fill:color(display-p3 0.1700 0.1700 0.1700);fill-opacity:1"/>
-</svg>
