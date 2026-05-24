@@ -748,6 +748,7 @@ ol.footnotes {
 
 ol.footnotes li {
 	list-style-position: outside;
+    scroll-margin-top: var(--space-3xl);
 }
 
 a.fn-back-link {
@@ -756,10 +757,51 @@ a.fn-back-link {
 	text-decoration: none;
 }
 
-sup.fnr {
+.fnr {
 	scroll-margin-top: var(--space-3xl);
 	scroll-snap-margin-top: var(--space-3xl);
 }
+
+.blog,
+.blog-entry {
+    & .fnr a {
+        color: var(--color-text-secondary);
+    }
+
+    & .footnotes li {
+        line-height: 1.6;
+    }
+
+    & .footnotes li::marker {
+        color: var(--color-text-secondary);
+        font-size: 1.1em;
+    }
+
+    & .footnotes li:first-child {
+        list-style-type: '* ';
+    }
+
+    & .footnotes li:nth-child(2) {
+        list-style-type: '† ';
+    }
+
+    & .footnotes li:nth-child(3) {
+        list-style-type: '‡ ';
+    }
+
+    & .footnotes li:nth-child(4) {
+        list-style-type: '∥ ';
+    }
+
+    & .footnotes li:nth-child(5) {
+        list-style-type: '¶ ';
+    }
+
+    & .footnotes li:nth-child(6) {
+        list-style-type: '# ';
+    }
+}
+
 
 sup a {
 	padding: 0.2rem;
