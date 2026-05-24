@@ -580,7 +580,7 @@ body {
 	}
 
 	*::-webkit-scrollbar {
-		width: var(--space);
+		width: 14px;
 	}
 
 	*::-webkit-scrollbar-track {
@@ -590,8 +590,9 @@ body {
 
 	*::-webkit-scrollbar-thumb {
 		border-radius: var(--border-radius-round);
-		border: 2px solid var(--color-surface-bg);
+		border: 1px solid var(--color-surface-bg);
 		background-color: var(--color-scrollbar);
+        /* box-shadow: 0px 2px 4px var(--color-shadow); */
 		-webkit-transition: 0.2s;
 		transition: 0.2s;
 	}
