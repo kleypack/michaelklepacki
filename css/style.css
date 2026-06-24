@@ -3163,60 +3163,110 @@ p.book-author {
     cursor: var(--cursor-tv-webkit);
 }
 
-.gaming-tv,
-.watching-tv {
+.game,
+.tv-show {
+    display: flex;
+    gap: var(--space);
+    margin-top: var(--space-xl);
+}
+
+h2 + .game:not(.game-featured),
+h2 + .tv-show:not(.tv-show-featured) {
+    margin-top: var(--space-l);
+}
+
+.game img,
+.tv-show img {
+    position: relative;
+    flex-shrink: 0;
+    align-self: flex-start;
+    height: auto;
+    outline: 1px solid color(display-p3 0 0 0 / 0.08);
+    outline-offset: -1px;
+    border-radius: var(--border-radius-s);
+}
+
+@media (prefers-color-scheme: dark) {
+    .game img,
+    .tv-show img {
+        outline-color: color(display-p3 1 1 1 / 0.08);
+    }
+}
+
+.game > img,
+.game > a {
+    flex-shrink: 0;
+    width: 33%;
+    height: fit-content;
+}
+
+.game > a > img {
+    width: 100%;
+    box-shadow: 0 14px 10px -12px var(--color-shadow-heavy);
+    transition: 0.2s;
+}
+
+.tv-show > img {
+    width: calc((100% - var(--space)) / 2);
+}
+
+.game-info,
+.show-info {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-s);
+    justify-content: space-between;
+    padding: var(--space-s) 0;
+}
+
+.game h3,
+.tv-show h3 {
+    margin: 0;
+    font-size: 1.9rem;
+}
+
+.game-playtime,
+.show-network {
+    font-size: 1.4rem;
+}
+
+
+.game-system,
+.game-playtime,
+.show-network,
+.show-season {
+    color: var(--color-text-secondary);
+}
+
+.game-review p + p {
+    margin: 0;
+}
+
+.game-featured,
+.tv-show-featured {
+    display: flex;
+    align-items: baseline;
+    flex-direction: column;
+    gap: 0;
+    margin-top: 0;
+}
+
+.game-featured .screen-container,
+.tv-show-featured .screen-container {
 	display: flex;
 	flex-direction: column;
 	align-items: center;
 	gap: 0;
 	position: relative;
 	z-index: 1;
-	margin-top: var(--space);
 	margin-bottom: var(--space-l);
 	width: 100%;
 }
 
-.gaming-tv .screen,
-.watching-tv .screen {
-	position: relative;
-	z-index: 1;
-	outline: solid 1px var(--color-tv-body);
-	border: 4px solid black;
-	border-bottom: 8px solid black;
-	border-radius: var(--border-radius-xxs);
-	background-color: black;
-	box-shadow:
-		0 30px 16px -20px var(--color-shadow-heavy),
-		0 4px 8px 2px var(--color-shadow),
-		0 2px 4px var(--color-shadow-heavy);
-}
-
-/* glare */
-@media (prefers-color-scheme: light) {
-	.screen::before {
-		content: "";
-		position: absolute;
-		top: -4px;
-		left: 0;
-		z-index: 0;
-		width: 100%;
-		height: 40%;
-		border-radius: var(--border-radius-xxs);
-		background:
-			radial-gradient(
-				ellipse at 50% top,
-				hsla(0, 0%, 100%, 30%) 0%,
-				hsla(0, 0%, 100%, 15%) 40%,
-				hsla(0, 0%, 100%, 0%) 70%);
-		-webkit-filter: blur(0.5px);
-		filter: blur(0.5px);
-	}
-}
-
 /* light leak */
 @media (prefers-color-scheme: dark) {
-	.gaming-tv::before,
-    .watching-tv::before {
+	.screen-container::before,
+    .screen-container::before {
 		content: '';
 		position: absolute;
 		top: 0;
@@ -3230,13 +3280,50 @@ p.book-author {
 		filter: blur(50px) saturate(70%);
 	}
 
-    .gaming-tv::before {
+    .game-featured .screen-container::before {
         background-image: url('/img/gaming/stellar-blade.jpg');
     }
 
-    .watching-tv::before {
+    .tv-show-featured .screen-container::before {
         background-image: url('/img/tv/detroitersS2.jpg');
         opacity: 50%
+    }
+}
+
+.screen,
+.screen {
+    position: relative;
+    z-index: 1;
+    outline: solid 1px var(--color-tv-body);
+    border: 4px solid black;
+    border-bottom: 8px solid black;
+    border-radius: var(--border-radius-xxs);
+    background-color: black;
+    box-shadow:
+        0 30px 16px -20px var(--color-shadow-heavy),
+        0 4px 8px 2px var(--color-shadow),
+        0 2px 4px var(--color-shadow-heavy);
+}
+
+/* glare */
+@media (prefers-color-scheme: light) {
+    .screen::before {
+        content: "";
+        position: absolute;
+        top: -4px;
+        left: 0;
+        z-index: 0;
+        width: 100%;
+        height: 40%;
+        border-radius: var(--border-radius-xxs);
+        background:
+            radial-gradient(
+                ellipse at 50% top,
+                hsla(0, 0%, 100%, 30%) 0%,
+                hsla(0, 0%, 100%, 15%) 40%,
+                hsla(0, 0%, 100%, 0%) 70%);
+        -webkit-filter: blur(0.5px);
+        filter: blur(0.5px);
     }
 }
 
@@ -3253,140 +3340,29 @@ p.book-author {
 	background-color: color(display-p3 0.79347 0.86387 0.9047);
 }
 
-.game,
-.tv-show {
-	display: flex;
-	gap: var(--space);
-	margin-top: var(--space-xl);
+.game-featured img,
+.tv-show-featured img {
+    border-radius: 1px;
 }
 
-h2 + .game,
-h2 + .tv-show {
-	margin-top: var(--space-l);
+.game-featured .game-info,
+.tv-show-featured .show-info {
+    width: 100%;
+    flex-direction: row;
+    align-items: baseline;
+    justify-content: space-between;
 }
 
-.game img,
-.tv-show img {
-	position: relative;
-	flex-shrink: 0;
-	align-self: flex-start;
-	width: 33%;
-	height: auto;
-    outline: 1px solid color(display-p3 0 0 0 / 0.08);
-    outline-offset: -1px;
-	border-radius: var(--border-radius-s);
-}
-
-@media (prefers-color-scheme: dark) {
-    .game img,
-    .tv-show img {
-        outline-color: color(display-p3 1 1 1 / 0.08);
-    }
-}
-
-.tv-show img {
-    position: relative;
-    flex-shrink: 0;
-    align-self: flex-start;
-    width: calc((100% - var(--space)) / 2);
-    height: auto;
-    border-radius: var(--border-radius-s);
-}
-
-.game > a,
-.tv-show > a {
-	flex-shrink: 0;
-	width: 33%;
-	height: fit-content;
-}
-
-.game > a > img,
-.tv-show > a > img {
-	width: 100%;
-	box-shadow: 0 14px 10px -12px var(--color-shadow-heavy);
-	transition: 0.2s;
-}
-
-.game-info,
-.show-info {
-	display: flex;
-	flex-direction: column;
-	gap: var(--space-s);
-	justify-content: space-between;
-	padding: var(--space-s) 0;
-}
-
-.game h3,
-.tv-show h3 {
-	margin: 0;
-	font-size: 1.9rem;
-}
-
-.game-system,
-.game-playtime,
-.show-network,
-.show-season {
-	color: var(--color-text-secondary);
-}
-
-.game-review p + p {
-	margin: 0;
-}
-
-.book-rating,
-.show-rating {
+.game-featured .game-details,
+.tv-show-featured .show-details {
     display: flex;
-    align-items: center;
-}
-
-.fave,
-.repeat {
-    display: inline-block;
-    margin-left: 0.5em;
-    color: firebrick;
-}
-
-.game-playtime,
-.show-network {
-	font-size: 1.4rem;
-}
-
-.gaming-tv img,
-.watching-tv img {
-	border-radius: 1px;
-}
-
-.currently-playing,
-.currently-watching {
-	display: flex;
-	align-items: baseline;
-	gap: var(--space-xs);
-	margin-top: 0;
-}
-
-.currently-playing > img,
-.currently-watching > img {
-	display: none;
-}
-
-.currently-playing .game-info,
-.currently-watching .show-info {
-	width: 100%;
-	flex-direction: row;
-	align-items: baseline;
-	justify-content: space-between;
-}
-
-.currently-playing .game-details,
-.currently-watching .show-details {
-	display: flex;
-	flex-direction: row;
-	align-items: baseline;
-	gap: var(--space-s);
+    flex-direction: row;
+    align-items: baseline;
+    gap: var(--space-s);
 }
 
 @media only screen and (max-width: 760px) {
-    .tv-show img {
+    .tv-show:not(.tv-show-featured) img {
         align-self: center;
         border-radius: var(--border-radius-xs);
     }
@@ -3404,6 +3380,19 @@ h2 + .tv-show {
     .show-network {
         display: none;
     }
+}
+
+.book-rating,
+.show-rating {
+    display: flex;
+    align-items: center;
+}
+
+.fave,
+.repeat {
+    display: inline-block;
+    margin-left: 0.5em;
+    color: firebrick;
 }
 
 
