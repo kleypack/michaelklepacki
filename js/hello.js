@@ -1,4 +1,4 @@
-const lilMessage = `Hello, curious visitor. How nice to cross paths here, in this secret little space, no? \nFeel free to look around, though be warned: it can get a little messy around these parts...`;
+const lilMessage = `Hello, curious visitor. How nice to cross paths, here in this secret little space, no? \nFeel free to look around, though be warned: it can get a little messy around these parts...`;
 
 const mural = `%c
  (                   )   (
